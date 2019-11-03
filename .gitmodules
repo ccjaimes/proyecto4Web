@@ -1,3 +1,6 @@
 [submodule "app-back/front"]
 	path = app-back/front
 	url = https://github.com/ccjaimes/proyecto4Web/app-back/front
+[submodule "app-back/app-back/front"]
+	path = app-back/app-back/front
+	url = https://github.com/ccjaimes/proyecto4Web
