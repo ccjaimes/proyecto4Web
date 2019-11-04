@@ -4,6 +4,7 @@ import DetailView from './DetailView';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
 import { Route, Switch,Link } from 'react-router-dom';
+import {ListGroup} from 'react-bootstrap';
 
 import Reportar from '../reportar';
 import User from '../User/User';
@@ -11,11 +12,13 @@ import User from '../User/User';
 
 class Page extends Component {
 
-    constructor(){
-        this.state= {
+    state= {
 
-        }
+        
     }
+    logout() {
+        this.props.auth.logout();
+      }
     render() {
         return (
             <div>
@@ -34,12 +37,15 @@ class Page extends Component {
                     <ListGroup.Item action>
                         <NavLink to="/reportar">Reportar Robo</NavLink> 
                     </ListGroup.Item>
+                    <ListGroup.Item action>
+                        <NavLink onClick={this.logout.bind(this)}>Cerrar Sesión</NavLink> 
+                    </ListGroup.Item>
                 </ListGroup>
                 </div>
                 <div className="col-8 App_Form">
                 <Switch>
-                    <Route exact path='/user' component={User}/>
-                    <Route path='/reportar' component={Reportar}/>
+                    <Route path='/user' auth={this.props.auth} component={User}/>
+                    <Route path='/reportar' auth={this.props.auth}  component={Reportar}/>
                 </Switch>
                 </div>
             </div>

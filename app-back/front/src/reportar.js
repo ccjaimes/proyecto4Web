@@ -3,16 +3,15 @@ import {Button, Modal, Form} from 'react-bootstrap';
 
 class Reportar extends Component {
 
-    constructor(){
-        this.state ={
-            show = false, 
-            marca = '',
-            tipo = '',
-            color = '',
-            tamano = '',
-            direccion = '',
+    state ={
+            show : false, 
+            marca : '',
+            tipo : '',
+            color : '',
+            tamano : '',
+            direccion : '',
         }
-    }
+    
 
     handleShow=()=>{
         this.setState({
@@ -52,7 +51,7 @@ class Reportar extends Component {
                         </div>
                     </div>
                 </div>
-                <Modal show={this.state.show} onHide={handleClose}>
+                <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Reporte de Robo </Modal.Title>
                     </Modal.Header>
@@ -86,10 +85,10 @@ class Reportar extends Component {
                     </Form>
 
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={this.statehandleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleSubmit}>
+                    <Button variant="primary" onClick={this.handleSubmit}>
                         Reportar
                     </Button>
                     </Modal.Footer>
