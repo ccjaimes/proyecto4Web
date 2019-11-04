@@ -4,7 +4,9 @@ import { Card, Row } from 'react-bootstrap';
 
 class Reportar extends Component {
 
-    state ={
+    constructor(){
+        super();
+         this.state ={
             show : false, 
             marca : '',
             tipo : '',
@@ -12,9 +14,12 @@ class Reportar extends Component {
             tamano : '',
             direccion : '',
         }
+        this.textInput = React.createRef();
+    }
     
 
     handleShow=()=>{
+        console.log(this.state.show)
         this.setState({
             show : true
         })
@@ -29,8 +34,13 @@ class Reportar extends Component {
     handleSubmit = e =>{
         e.preventDefault();
 
-         
-
+        var data = {marca:document.getElementById("formGroupMarca").value,
+                    tipo:document.getElementById("formGroupTipo").value,
+                    color:document.getElementById("formGroupColor").value,
+                    tamano: document.getElementById("formGroupTamanho").value,
+                    direccion: document.getElementById("formGroupDireccion").value
+    }
+        console.log(data);
         this.setState({
             show:false
         })
@@ -40,13 +50,13 @@ class Reportar extends Component {
 
     render() {
         return (
-            <Row>
-               <Card text="white">
-                   <Card.Body style={{backgroundColor: '#EF233C'}}>
+            <Row className="justify-content-md-center">
+               <Card text="white" className="text-center" style={{ width: '18rem'}}>
+                   <Card.Body style={{backgroundColor: '#8D99AE'}}>
                       <Card.Title>
                            Reportar un Robo
                     </Card.Title>
-                    <Button variant="outline-danger" onChange={this.handleShow}>Danger</Button>
+                    <Button variant="outline-danger" onClick={() => this.handleShow()} size="lg" block>Danger</Button>
                     </Card.Body>
                 </Card>
                     
@@ -59,19 +69,19 @@ class Reportar extends Component {
                     <Form>
                         <Form.Group controlId="formGroupMarca">
                             <Form.Label>Marca de la bicicleta</Form.Label>
-                            <Form.Control type="text" placeholder="Ej: Trek" inputRef={ref => { this.setState({marca: ref}) }}/>
+                            <Form.Control type="text" placeholder="Ej: Trek" />
                         </Form.Group>
                         <Form.Group controlId="formGroupTipo">
                             <Form.Label>Tipo</Form.Label>
-                            <Form.Control type="text" placeholder="Ej: BMX" inputRef={ref => { this.setState({tipo: ref}) }} />
+                            <Form.Control type="text" placeholder="Ej: BMX" />
                         </Form.Group>
                         <Form.Group controlId="formGroupColor">
                             <Form.Label>Color</Form.Label>
-                            <Form.Control type="text" placeholder="Ej: Rojo" inputRef={ref => { this.setState({color: ref}) }}/>
+                            <Form.Control type="text" placeholder="Ej: Rojo" />
                         </Form.Group>
                         <Form.Group controlId="formGroupTamanho">
                             <Form.Label>Tamaño de la bicicleta</Form.Label>
-                            <Form.Control as="select" inputRef={ref => { this.setState({tamano: ref}) }}>
+                            <Form.Control as="select" >
                                 <option>Alta</option>
                                 <option>Mediana</option>
                                 <option>Baja</option>
@@ -79,7 +89,7 @@ class Reportar extends Component {
                         </Form.Group>
                         <Form.Group controlId="formGroupDireccion">
                             <Form.Label>Por favor, ingresa la direccion en la que te robaron la bicicleta</Form.Label>
-                            <Form.Control type="text" placeholder="Ej: Carrera 63 # 1" inputRef={ref => { this.setState({direccion: ref}) }}/>
+                            <Form.Control type="text" placeholder="Ej: Carrera 63 # 1" />
                         </Form.Group>
                     </Form>
 
@@ -87,7 +97,7 @@ class Reportar extends Component {
                     <Button variant="secondary" onClick={this.statehandleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={this.handleSubmit}>
+                    <Button variant="primary" onClick={(e) => this.handleSubmit(e)}>
                         Reportar
                     </Button>
                     </Modal.Footer>
