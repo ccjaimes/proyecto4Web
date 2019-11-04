@@ -5,15 +5,24 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Home extends Component {
     
-      signup() {
+    signup() {
         this.props.auth.signup();
       }
     
       login() {
         this.props.auth.login();
       }
+    
       logout() {
         this.props.auth.logout();
+      }
+    
+      componentDidMount() {
+        const { renewSession } = this.props.auth;
+    
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+          renewSession();
+        }
       }
     render() {
         const { isAuthenticated } = this.props.auth;
@@ -38,20 +47,7 @@ class Home extends Component {
                 )
             }
                
-            {
-              isAuthenticated() && (
-                <Navbar bg="light" expand="lg" fixed="top">
-                <Navbar.Brand href="#home">Bicicletas</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link onClick={this.logout.bind(this)}>Cerrar Sesion</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-            </Navbar>
-                )
-            }
+            
             
             
            
