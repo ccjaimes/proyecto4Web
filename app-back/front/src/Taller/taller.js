@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 
-class Grupo extends Component {
+class Taller extends Component {
     state = {
-        grupos: []
+        talleres: []
     }
     componentWillMount() {
-        fetch("/back/grupos/").then(res => res.json()).then(lista => {
+        fetch("/back/talleres/").then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({
-                grupos: lista
+                talleres: lista
             });
         });
     }
     deployList() {
         let final;
-        for (let i = 0; i <= this.state.grupos.length; i += 3) {
+        for (let i = 0; i <= this.state.talleres.length; i += 3) {
             let retorno;
-            let e1 = i === this.state.grupos.length ? -1 : this.state.grupos[i];
-            let e2 = i + 1 < this.state.grupos.length ? this.state.grupos[i + 1] : i + 1 === this.state.grupos.length ? -1 : null;
-            let e3 = i + 2 < this.state.grupos.length ? this.state.grupos[i + 2] : i + 2 === this.state.grupos.length ? -1 : null;
+            let e1 = i === this.state.talleres.length ? -1 : this.state.talleres[i];
+            let e2 = i + 1 < this.state.talleres.length ? this.state.talleres[i + 1] : i + 1 === this.state.talleres.length ? -1 : null;
+            let e3 = i + 2 < this.state.talleres.length ? this.state.talleres[i + 2] : i + 2 === this.state.talleres.length ? -1 : null;
             if (e1 === -1) {
                 retorno +=
                     <div className="col-12 col-md-4">
@@ -83,11 +83,11 @@ class Grupo extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <h1 className="display-4">Grupos disponibles</h1>
+                <h1 className="display-4">Talleres</h1>
                 {this.deployList()}
             </div>
         );
     }
 }
 
-export default Grupo;
+export default Taller;

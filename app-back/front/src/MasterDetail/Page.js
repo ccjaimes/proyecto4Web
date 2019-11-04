@@ -7,6 +7,7 @@ import {  BrowserRouter as Router,Route, Switch,Link } from 'react-router-dom';
 import {ListGroup} from 'react-bootstrap';
 
 import Reportar from '../reportar';
+import Grupo from '../Grupo/grupo';
 import User from '../User/User';
 
 
@@ -48,6 +49,9 @@ class Page extends Component {
                     <Route path='/user' auth={this.props.auth} component={User}/>
                     <Route path='/reportar' auth={this.props.auth} >
                         <Reportar></Reportar>
+                    </Route>
+                    <Route path="/grupos">
+                        <Grupo></Grupo>
                     </Route>
                 </Switch>
                 </div>
