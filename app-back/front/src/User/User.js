@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
-import Home from "../home";
 class User extends Component {
     state={
-        user:{
+        
             sub: "",
             nickname: "",
             name: "",
@@ -11,33 +10,44 @@ class User extends Component {
             updated_at: "",
             email: "",
             email_verified: ""
-        }
+        
     }
-  getuserinfo() {
-    this.setState({
-        usuario :this.props.auth.getuserinfo()});
+  componentDidMount() {
+      console.log(this.props.location.aboutProps.auth);
+      this.setState(this.props.location.aboutProps.auth.user);
+    
+    
   }
+  login() {
+    this.props.location.aboutProps.auth.login();
+  }
+
   logout() {
-    this.props.auth.logout();
+    this.props.location.aboutProps.auth.logout();
   }
+
   render() {
-    const isAuthenticated  = this.props.auth;
+    console.log(this.props.location.aboutProps);
+     
+      console.log(this.props.location.aboutProps.auth.user);
+     
+    const { isAuthenticated } = this.props.location.aboutProps.auth;
     return (
       <div className="container">
-        {
-          isAuthenticated && (
+          {
+          isAuthenticated() && (
               
             
         
         <div className="row">
             
                 <div className="col-3">
-                <img src={this.state.usuario.picture} className="img-fluid" alt="Institution" width="300" height="300"></img>
+                <img src={this.state.picture} className="img-fluid" alt="Institution" width="300" height="300"></img>
 
                 </div>
                 <div className="col-7">
                 <div className="row">
-                <div className="col-4"><h1>{this.state.usuario} </h1> </div>
+                <div className="col-4"><h1>{this.state.nickname} </h1> </div>
                 <div id="cerrar"className="col-5">
 
                 <Button
@@ -51,9 +61,9 @@ class User extends Component {
                 </div>
                 </div>
                 <br></br>
-                <h3>Correo:         {this.state.usuario.email} </h3>
-                <h3>Nickname:            {this.state.usuario.nickname} </h3>
-                <h3>Nombre:       {this.state.usuario.name} </h3>
+                <h3>Correo:         {this.state.email} </h3>
+                <h3>Nickname:            {this.state.nickname} </h3>
+                <h3>Nombre:       {this.state.name} </h3>
              
              
               
@@ -79,4 +89,4 @@ class User extends Component {
   }
 }
 
-export default Home;
+export default User;

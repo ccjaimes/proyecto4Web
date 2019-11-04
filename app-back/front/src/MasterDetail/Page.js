@@ -27,7 +27,7 @@ class Page extends Component {
                 <div className="col-4 App_Aside">
                 <ListGroup variant="flush">
                     <ListGroup.Item action>
-                        <Link to="/user">Perfil</Link>
+                        <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <NavLink to="/grupos">Grupos</NavLink>

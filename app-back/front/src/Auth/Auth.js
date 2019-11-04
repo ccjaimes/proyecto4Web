@@ -6,13 +6,14 @@ export default class Auth {
   accessToken;
   idToken;
   expiresAt;
+  user;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor() {
@@ -22,6 +23,7 @@ export default class Auth {
     this.isAuthenticated = this.isAuthenticated.bind(this);
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
+    this.getUser = this.getUser.bind(this);
     this.renewSession = this.renewSession.bind(this);
   }
 
@@ -46,7 +48,17 @@ export default class Auth {
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
+        console.log(authResult);
+       
+        this.auth0.client.userInfo(authResult.accessToken, (err2, user2)=> {
+            // Now you have the user's information
+            console.log("user");
+            console.log(user2);
+            
+            this.setSession(authResult,user2);
+        
+          });
+        
       } else if (err) {
         history.replace('/home');
         console.log(err);
@@ -59,11 +71,14 @@ export default class Auth {
     return this.accessToken;
   }
 
+  getUser() {
+    return this.user;
+  }
   getIdToken() {
     return this.idToken;
   }
-
-  setSession(authResult) {
+ 
+  setSession(authResult,user) {
     // Set isLoggedIn flag in localStorage
     localStorage.setItem('isLoggedIn', 'true');
 
@@ -72,7 +87,7 @@ export default class Auth {
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
-
+    this.user=(user);
     // navigate to the home route
     history.replace('/page');
   }
