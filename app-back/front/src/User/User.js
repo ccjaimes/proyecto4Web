@@ -21,11 +21,11 @@ class User extends Component {
     this.props.auth.logout();
   }
   render() {
-    const { isAuthenticated } = this.props.auth;
+    const isAuthenticated  = this.props.auth;
     return (
       <div className="container">
         {
-          isAuthenticated() && (
+          isAuthenticated && (
               
             
         

@@ -27,16 +27,16 @@ class Page extends Component {
                 <div className="col-4 App_Aside">
                 <ListGroup variant="flush">
                     <ListGroup.Item action>
-                        <NavLink to="/user">Perfil</NavLink>
+                        <Link to="/user">Perfil</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <NavLink to="/grupos">Grupos</NavLink>
                     </ListGroup.Item>
                     <ListGroup.Item action>
-                        <NavLink to="/servicios">Servicios</NavLink>
+                        <Link to="/servicios">Servicios</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
-                        <NavLink to="/reportar">Reportar Robo</NavLink> 
+                        <Link to="/reportar">Reportar Robo</Link> 
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <NavLink onClick={this.logout.bind(this)}>Cerrar Sesión</NavLink> 
@@ -46,7 +46,9 @@ class Page extends Component {
                 <div className="col-8 App_Form">
                 <Switch>
                     <Route path='/user' auth={this.props.auth} component={User}/>
-                    <Route path='/reportar' auth={this.props.auth}  component={Reportar}/>
+                    <Route path='/reportar' auth={this.props.auth} >
+                        <Reportar></Reportar>
+                    </Route>
                 </Switch>
                 </div>
             </div>
