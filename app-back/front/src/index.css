@@ -3,3 +3,51 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
+
+.post {
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #c9cccd;
+    margin-bottom: 20px;
+}
+.pull-left {
+    float: left;
+}
+.post .wrap-ut {
+    width: 85%;
+}
+.imagen{
+    width: 50px;
+    height: 50px;
+}
+.post .userinfo {
+    width: 15%;
+    padding: 20px 0 15px 15px;
+}
+.post .avatar {
+    width: 37px;
+    margin-left: 5px;
+}
+.avatar {
+    position: relative;
+}
+.post .posttext {
+    width: 85%;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: black;
+    font-size: 14px;
+    font-family: 'Open Sans Light', sans-serif;
+    line-height: 25px;
+}
+.date{
+    color:#989c9e;
+}
+.post .comentario{
+    width: 100%;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+}
