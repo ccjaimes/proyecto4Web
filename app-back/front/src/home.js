@@ -41,10 +41,14 @@ class Home extends Component {
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link onClick={this.signup.bind(this)}>Registrarse</Nav.Link>
                 <Nav.Link onClick={this.login.bind(this)}>Login</Nav.Link>
-                </Nav>
-                </Navbar.Collapse>
-                </Navbar> 
+            </Nav>
+            </Navbar.Collapse>
+            </Navbar>
+            
+       
+                 
                 )
+               
             }
             </div>
             <Switch>

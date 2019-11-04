@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PublicacionCard from '../publicacionCard';
-
+import PublicacionCard from './publicacionCard';
 class PublicacionList extends Component {
     
     state={
