@@ -16,6 +16,9 @@ class Page extends Component {
 
         
     }
+    logout() {
+        this.props.auth.logout();
+      }
     render() {
         return (
             <div>
@@ -33,6 +36,9 @@ class Page extends Component {
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <NavLink to="/reportar">Reportar Robo</NavLink> 
+                    </ListGroup.Item>
+                    <ListGroup.Item action>
+                        <NavLink onClick={this.logout.bind(this)}>Cerrar Sesión</NavLink> 
                     </ListGroup.Item>
                 </ListGroup>
                 </div>
