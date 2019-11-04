@@ -33,5 +33,38 @@ router.post("/", (req, res) => {
     });
 });
 
+//DESDE ACA SE MANEJAN LAS PUBLICACIONES DE UN GRUPO
+
+/* GET publicaciones de un grupo */
+
+
+router.get('/:grupo/publicaciones', (req, res, next) => {
+    conn.then(client => {
+        client.db("db").collection("grupo").find({ _id: ObjectId(req.params.grupo) }).toArray((err, data) => {
+            res.send(data[0]["publicaciones"]);
+        });
+    });
+});
+
+/* POST publicaciones de un grupo */
+
+
+router.post('/:grupo/publicaciones/', (req, res, next) => {
+    conn.then(client => {
+        client.db("db").collection("grupo").find({ _id: ObjectId(req.params.grupo) }).toArray((err, data) => {
+            if (data.length === 0) {
+                res.status(404).send("No existe ese grupo");
+            }
+            else {
+                client.db("db").collection("publicacion").insertOne(req.body).then(resp => {
+                    client.db("db").collection("publicacion").find({ _id: ObjectId(resp.insertedId) }).toArray((err, data) => {
+                        client.db("db").collection("grupo").updateOne({ _id: ObjectId(req.params.grupo) }, { $addToSet: { publicaciones: data[0] } });
+                        res.send("Se ha agregado una publicacion");
+                    });
+                });
+            }
+        });
+    });
+});
 
 module.exports = router;

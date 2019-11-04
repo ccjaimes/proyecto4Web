@@ -47,7 +47,7 @@ class User extends Component {
                 </div>
                 <div className="col-7">
                 <div className="row">
-                <div className="col-4"><h1>{this.state.nickname} </h1> </div>
+                <div className="col-7"><h1>{this.state.nickname} </h1> </div>
                 <div id="cerrar"className="col-5">
 
                 <Button
