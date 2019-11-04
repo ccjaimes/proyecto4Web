@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Route, Switch,Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
@@ -69,8 +70,6 @@ class Home extends Component {
                 <div>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path='/login' component={User}/>
-                    <Route path='/registrar' component={Registrar}/>
                 </Switch>
                 </div>
             </div>
