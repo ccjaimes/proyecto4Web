@@ -12,26 +12,57 @@ class User extends Component {
             email_verified: ""
         
     }
-  componentDidMount() {
-      console.log(this.props.location.aboutProps.auth);
-      this.setState(this.props.location.aboutProps.auth.user);
+  
+  componentDidMount () {
+    var persistState = localStorage.getItem('user');
     
-    
+    if (persistState) {
+      try {
+        this.setState(JSON.parse(persistState));
+      } catch (e) {
+        // is not json
+      }
+    }
   }
+  
+  componentWillUnmount () {
+    localStorage.setItem('user', JSON.stringify(this.state));
+  }
+
   login() {
-    this.props.location.aboutProps.auth.login();
+    if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+        this.props.location.aboutProps.auth.login();
+    
+      }
+      else{
+        this.props.auth.login();
+    
+      }
   }
 
   logout() {
-    this.props.location.aboutProps.auth.logout();
+      if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+        this.props.location.aboutProps.auth.logout();
+      }
+      else{
+        this.props.auth.logout();
+      }
+   
   }
 
   render() {
-    console.log(this.props.location.aboutProps);
-     
-      console.log(this.props.location.aboutProps.auth.user);
-     
-    const { isAuthenticated } = this.props.location.aboutProps.auth;
+      console.log(this.props);
+      var m=null;
+      if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+        m=this.props.location.aboutProps.auth;
+      }
+      else{
+        m=this.props.auth;
+
+      }
+    const { isAuthenticated } = m;
+   
+    
     return (
       <div className="container">
           {
@@ -61,9 +92,8 @@ class User extends Component {
                 </div>
                 </div>
                 <br></br>
-                <h3>Correo:         {this.state.email} </h3>
                 <h3>Nickname:            {this.state.nickname} </h3>
-                <h3>Nombre:       {this.state.name} </h3>
+                <h3>Correo:       {this.state.name} </h3>
              
              
               

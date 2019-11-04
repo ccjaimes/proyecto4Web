@@ -29,10 +29,10 @@ class Page extends Component {
                 
                 <ListGroup variant="flush">
                     <ListGroup.Item action>
-                        <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
+                    <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
-                        <Link to="/grupos">Grupos</Link>
+                        <NavLink to="/grupos">Grupos</NavLink>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <Link to="/servicios">Servicios</Link>
@@ -47,8 +47,8 @@ class Page extends Component {
                 </Col>
                 <Col xs={12} md={8} lg={8} className="col-8 App__Form">
                 <Switch>
-                    <Route path='/user' auth={this.props.auth} component={User}/>
-                    <Route path='/reportar' auth={this.props.auth} >
+                    <Route path='/user' auth={this.props.auth} ><User auth={this.props.auth}></User></Route>
+                   <Route path='/reportar' auth={this.props.auth} >
                         <Reportar></Reportar>
                     </Route>
                     <Route path="/grupos">
