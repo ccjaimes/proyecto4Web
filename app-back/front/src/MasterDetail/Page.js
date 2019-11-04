@@ -3,7 +3,7 @@ import MasterView from './MasterView';
 import DetailView from './DetailView';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
-import { Route, Switch,Link } from 'react-router-dom';
+import {  BrowserRouter as Router,Route, Switch,Link } from 'react-router-dom';
 import {ListGroup} from 'react-bootstrap';
 
 import Reportar from '../reportar';
@@ -21,6 +21,7 @@ class Page extends Component {
       }
     render() {
         return (
+            <Router>
             <div>
             <div className="col-12">
                 <div className="col-4 App_Aside">
@@ -50,6 +51,7 @@ class Page extends Component {
                 </div>
             </div>
             </div>
+            </Router>
         );
     }
 }
