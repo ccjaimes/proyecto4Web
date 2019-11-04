@@ -32,5 +32,12 @@ router.post("/", (req, res) => {
         res.send("El grupo ha sido creado");
     });
 });
+router.get('/publicaciones/', function (req, res, next) {
+    conn.then(client => {
+        client.db("db").collection("publicacion").find({}).toArray((err, data) => {
+            res.send(data)
+        });
+    });
+});
 
 module.exports = router;
