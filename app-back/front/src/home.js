@@ -29,6 +29,7 @@ class Home extends Component {
 
         return (
             <div>
+             
             <div>
             {
               !isAuthenticated() && (
@@ -43,11 +44,14 @@ class Home extends Component {
             </Nav>
             </Navbar.Collapse>
             </Navbar>
+            
+       
                  
                 )
+               
             }
                
-            
+             
             
             
            
