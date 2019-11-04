@@ -32,7 +32,7 @@ class Page extends Component {
                         <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
-                        <NavLink to="/grupos">Grupos</NavLink>
+                        <Link to="/grupos">Grupos</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <Link to="/servicios">Servicios</Link>
