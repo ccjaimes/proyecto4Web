@@ -7,10 +7,11 @@ var conn = client.connect();
 var express = require('express');
 var router = express.Router();
 
-router.get('/publicaciones/', function (req, res, next) {
+router.get('/', function (req, res, next) {
     conn.then(client => {
         client.db("db").collection("publicacion").find({}).toArray((err, data) => {
             res.send(data)
         });
     });
 });
+module.exports = router;

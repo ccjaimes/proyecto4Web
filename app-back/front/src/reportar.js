@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Button, Modal, Form} from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 
 class Reportar extends Component {
 
@@ -39,18 +40,16 @@ class Reportar extends Component {
 
     render() {
         return (
-            <div className="row">
-                <div className="col-12 ">
-                    <div style={{ display: "flex",
-                justifyContent: "center",
-                alignItems: "center"}}>
-                        <div className="card text-center mx-auto">
-                            <div className="card-body" style={{backgroundColor: '#FFC49B'}}>
-                                <Button variant="outline-danger" onChange={this.handleShow}>Danger</Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <Row>
+               <Card text="white">
+                   <Card.Body style={{backgroundColor: '#EF233C'}}>
+                      <Card.Title>
+                           Reportar un Robo
+                    </Card.Title>
+                    <Button variant="outline-danger" onChange={this.handleShow}>Danger</Button>
+                    </Card.Body>
+                </Card>
+                    
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Reporte de Robo </Modal.Title>
@@ -93,7 +92,7 @@ class Reportar extends Component {
                     </Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+            </Row>
         );
     }
 }

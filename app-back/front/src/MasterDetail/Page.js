@@ -4,7 +4,7 @@ import DetailView from './DetailView';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
 import {  BrowserRouter as Router,Route, Switch,Link } from 'react-router-dom';
-import {ListGroup} from 'react-bootstrap';
+import {ListGroup, Row, Container, Col} from 'react-bootstrap';
 
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
@@ -23,9 +23,10 @@ class Page extends Component {
     render() {
         return (
             <Router>
-            <div>
-            <div className="col-12">
-                <div className="col-4 App_Aside">
+            <Container>
+            <Row>
+            <Col xs={12} md={4} lg={4} className="App__Aside">
+                
                 <ListGroup variant="flush">
                     <ListGroup.Item action>
                         <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
@@ -43,8 +44,8 @@ class Page extends Component {
                         <NavLink onClick={this.logout.bind(this)}>Cerrar Sesión</NavLink> 
                     </ListGroup.Item>
                 </ListGroup>
-                </div>
-                <div className="col-8 App_Form">
+                </Col>
+                <Col xs={12} md={8} lg={8} className="col-8 App__Form">
                 <Switch>
                     <Route path='/user' auth={this.props.auth} component={User}/>
                     <Route path='/reportar' auth={this.props.auth} >
@@ -54,9 +55,9 @@ class Page extends Component {
                         <Grupo></Grupo>
                     </Route>
                 </Switch>
-                </div>
-            </div>
-            </div>
+                </Col>
+            </Row>
+            </Container>
             </Router>
         );
     }
