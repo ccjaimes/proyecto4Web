@@ -56,7 +56,7 @@ class Reportar extends Component {
                       <Card.Title>
                            Reportar un Robo
                     </Card.Title>
-                    <Button variant="outline-danger" onClick={() => this.handleShow()} size="lg" block>Danger</Button>
+                    <Button variant="outline-danger" onClick={() => this.handleShow()} size="lg" block>Reportar</Button>
                     </Card.Body>
                 </Card>
                     

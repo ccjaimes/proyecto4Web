@@ -22,26 +22,27 @@ class Page extends Component {
       }
     render() {
         return (
-            <Router>
-            <Container>
+            
+            <Container style={{max_width: '100%'}}>
+                <Router>
             <Row>
             <Col xs={12} md={4} lg={4} className="App__Aside">
                 
                 <ListGroup variant="flush">
-                    <ListGroup.Item action>
-                        <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}}>Perfil</Link>
+                    <ListGroup.Item action  className="List__Group" >
+                        <Link to={{ pathname:'/user', aboutProps:{auth: this.props.auth}}} style={{ color: '#D90429' }}>Perfil</Link>
                     </ListGroup.Item>
-                    <ListGroup.Item action>
-                        <Link to="/grupos">Grupos</Link>
+                    <ListGroup.Item action  className="List__Group" >
+                        <Link to="/grupos" style={{ color: '#D90429' }}>Grupos</Link>
                     </ListGroup.Item>
-                    <ListGroup.Item action>
-                        <Link to="/servicios">Servicios</Link>
+                    <ListGroup.Item action  className="List__Group" >
+                        <Link to="/servicios" style={{ color: '#D90429' }}>Servicios</Link>
                     </ListGroup.Item>
-                    <ListGroup.Item action>
-                        <Link to="/reportar">Reportar Robo</Link> 
+                    <ListGroup.Item action  className="List__Group" >
+                        <Link to="/reportar" style={{ color: '#D90429' }}>Reportar Robo</Link> 
                     </ListGroup.Item>
-                    <ListGroup.Item action>
-                        <NavLink onClick={this.logout.bind(this)}>Cerrar Sesión</NavLink> 
+                    <ListGroup.Item action  className="List__Group" >
+                        <NavLink onClick={this.logout.bind(this)} style={{ color: '#D90429' }}>Cerrar Sesión</NavLink> 
                     </ListGroup.Item>
                 </ListGroup>
                 </Col>
@@ -56,9 +57,11 @@ class Page extends Component {
                     </Route>
                 </Switch>
                 </Col>
+                
             </Row>
-            </Container>
             </Router>
+            </Container>
+            
         );
     }
 }
