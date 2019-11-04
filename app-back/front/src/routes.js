@@ -6,6 +6,8 @@ import Page from './MasterDetail/Page';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
+import Reportar from './reportar';
+import User from './User/User';
 
 const auth = new Auth();
 
@@ -22,7 +24,9 @@ export const makeMainRoutes = () => {
           <Route path="/" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/page" render={(props) => <Page auth={auth} {...props} />} />
-          
+          <Route path='/user' render={(props) => <User auth={auth} {...props} />} />
+           <Route path='/reportar' render={(props) => <Reportar auth={auth} {...props} />} />
+                
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 

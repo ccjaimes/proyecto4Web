@@ -3,11 +3,8 @@ import MasterView from './MasterView';
 import DetailView from './DetailView';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
-import { Route, Switch,Link } from 'react-router-dom';
 import {ListGroup} from 'react-bootstrap';
 
-import Reportar from '../reportar';
-import User from '../User/User';
 
 
 class Page extends Component {
@@ -42,10 +39,7 @@ class Page extends Component {
                     </ListGroup.Item>
                 </ListGroup>
                 </div>
-                <div className="col-8 App_Form">
-                <Switch>
-                   </Switch>
-                </div>
+                
             </div>
             </div>
         );
