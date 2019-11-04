@@ -87,10 +87,10 @@ class Reportar extends Component {
 
                     <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                    Close
+                        Close
                     </Button>
                     <Button variant="primary" onClick={handleSubmit}>
-                    Reportar
+                        Reportar
                     </Button>
                     </Modal.Footer>
                 </Modal>

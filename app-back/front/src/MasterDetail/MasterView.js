@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MainUsuario extends Component {
+class MasterView extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class MainUsuario extends Component {
     }
 }
 
-export default MainUsuario;
+export default MasterView;
