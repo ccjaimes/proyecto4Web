@@ -74,7 +74,7 @@ export default class Auth {
     this.expiresAt = expiresAt;
 
     // navigate to the home route
-    history.replace('/');
+    history.replace('/page');
   }
 
   renewSession() {
@@ -103,7 +103,7 @@ export default class Auth {
     });
 
     // navigate to the home route
-    history.replace('/');
+    history.replace('/home');
   }
 
   isAuthenticated() {

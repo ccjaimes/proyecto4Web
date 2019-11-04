@@ -33,18 +33,7 @@ class App extends Component {
 
     return (
       <div>
-      {
-              !isAuthenticated() && (
-                  <Home auth={this.props.auth}></Home>
-                 
-                )
-            }
-               
-            {
-              isAuthenticated() && (
-                  <Page auth={this.props.auth}></Page>
-                )
-            }
+      
       </div>
     );
   }
