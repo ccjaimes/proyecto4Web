@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import {Button} from 'react-bootstrap';
+import Home from "../home";
 class User extends Component {
     state={
         user:{
