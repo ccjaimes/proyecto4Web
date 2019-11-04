@@ -4,7 +4,7 @@ import PublicacionCard from '../publicacionCard';
 class PublicacionList extends Component {
     
     state={
-        list: [],
+        list: []
     }
     
     componentDidMount(){
