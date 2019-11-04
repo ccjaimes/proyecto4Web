@@ -6,6 +6,9 @@ class App extends Component {
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
+  signup() {
+    this.props.auth.signup();
+  }
 
   login() {
     this.props.auth.login();
@@ -48,6 +51,19 @@ class App extends Component {
                     onClick={this.login.bind(this)}
                   >
                     Log In
+                  </Button>
+                 
+                )
+            }
+             {
+              !isAuthenticated() &&(
+                    <Button
+                    id="qsSignUpBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.signup.bind(this)}
+                  >
+                    Sign Up
                   </Button>
                 )
             }

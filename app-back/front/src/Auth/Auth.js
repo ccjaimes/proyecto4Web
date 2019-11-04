@@ -25,10 +25,24 @@ export default class Auth {
     this.renewSession = this.renewSession.bind(this);
   }
 
+
+  signup() {
+    this.auth0.authorize();
+  }
   login() {
     this.auth0.authorize();
   }
+  getuserinfo() {
+    this.auth0.parseHash((err, authResult) => {
+        if (authResult && authResult.accessToken && authResult.idToken) {
+            this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
+                // Now you have the user's information
 
+                return user;
+              });
+        } 
+      });
+  }
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
