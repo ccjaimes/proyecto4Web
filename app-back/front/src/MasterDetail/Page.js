@@ -35,11 +35,16 @@ class Page extends Component {
     render() {
         return (
 
-            <Container style={{ max_width: '100%' }}>
+            
                 <Router>
                     <Row>
                         <Col xs={12} md={4} lg={4} className="App__Aside">
                             <ListGroup variant="flush">
+                                
+                                <ListGroup.Item action className="List__Group"  >
+                                    <h5 style={{ color: '#D90429' }}>Bicicletas</h5>
+                                </ListGroup.Item>
+                                
                                 <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} >
                                     <ListGroup.Item action className="List__Group"  >
                                         <h5 style={{ color: '#D90429' }}>Perfil</h5>
@@ -92,7 +97,6 @@ class Page extends Component {
 
                     </Row>
                 </Router>
-            </Container>
 
         );
     }
