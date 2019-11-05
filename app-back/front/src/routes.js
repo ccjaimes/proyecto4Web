@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-import App from './App';
 import Home from './home';
 import Page from './MasterDetail/Page';
 import Callback from './Callback/Callback';

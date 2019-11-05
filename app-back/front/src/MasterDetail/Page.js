@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import MasterView from './MasterView';
-import DetailView from './DetailView';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
 import {  BrowserRouter as Router,Route, Switch,Link } from 'react-router-dom';

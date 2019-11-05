@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Route, Switch,Link } from 'react-router-dom';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 import Inicio from './inicio';
 
 class Home extends Component {
@@ -37,7 +37,7 @@ class Home extends Component {
                 <Navbar.Brand href="#home">Bicicletas</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="ml-auto">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link onClick={this.signup.bind(this)}>Registrarse</Nav.Link>
                 <Nav.Link onClick={this.login.bind(this)}>Login</Nav.Link>

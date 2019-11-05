@@ -30,7 +30,7 @@ class User extends Component {
   }
 
   login() {
-    if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+    if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         this.props.location.aboutProps.auth.login();
     
       }
@@ -41,7 +41,7 @@ class User extends Component {
   }
 
   logout() {
-      if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+      if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         this.props.location.aboutProps.auth.logout();
       }
       else{
@@ -53,7 +53,7 @@ class User extends Component {
   render() {
       console.log(this.props);
       var m=null;
-      if((this.props.location!=undefined)&&(this.props.location.aboutProps!=undefined)&&(this.props.location.aboutProps.auth!=undefined)){
+      if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         m=this.props.location.aboutProps.auth;
       }
       else{
