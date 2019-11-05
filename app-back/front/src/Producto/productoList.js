@@ -9,7 +9,6 @@ class ProductoList extends Component {
             list = []
         }
     }
-
     render() {
         return (
             <div>
