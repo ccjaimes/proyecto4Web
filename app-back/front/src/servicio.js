@@ -3,7 +3,8 @@ import {Card} from 'react-bootstrap';
 
 class Servicio extends Component {
 
-    constructor(){
+    constructor(props){
+        super(props);
         this.state={
             nombre:this.props.value.nombre,
             tipo:this.props.value.tipo
