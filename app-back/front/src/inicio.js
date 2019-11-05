@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Background from './images/Imagen.jpg';
-import {Col, Card, Row} from 'react-bootstrap';
+import {Col, Card, Row, Button} from 'react-bootstrap';
 
 
 var sectionStyle = {
@@ -19,17 +19,23 @@ class Inicio extends Component {
                  </Row>
                  <Row>
                 <Col md={4}></Col>
-                <Col md={{ span: 3, offset: 4 }} style={{display: "flex",
-                align_items: "center",
-                justify_content: "center"}}>
+                <Col md={{ span: 3, offset: 4 }} style={{position: "absolute",
+	top:"160px",
+	bottom: "0px",
+	left: "400px",
+	right: "50px",}}>
                     <Card>
                         <Card.Body>
                         <Card.Title>
                             Bienvenido a PineBicis
                         </Card.Title>
                         <Card.Text>
-                            En nuestro sitio tienes la oportunidad de conocer mas personas amantes de las bicis como tu 
+                            En nuestro sitio tienes la oportunidad de conocer mas personas amantes de las bicicletas como tu.
                         </Card.Text>
+                        <Card.Text>
+                            Registrate ya!
+                        </Card.Text>
+                        <Button>Registrate</Button>
                         </Card.Body>
                     </Card>
                 </Col>
