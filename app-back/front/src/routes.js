@@ -10,6 +10,7 @@ import User from './User/User';
 import Taller from './Taller/taller'
 import TallerDetailed from './Taller/tallerDetailed'
 
+
 const auth = new Auth();
 
 const handleAuthentication = ({location}) => {
