@@ -32,5 +32,38 @@ router.post("/", (req, res) => {
         res.send("El taller ha sido creado");
     });
 });
+//DESDE ACA SE MANEJAN LOS PRODUCTOS DE UN TALLER
+
+/* GET productos de un taller */
+
+
+router.get('/:taller/productos', (req, res, next) => {
+    conn.then(client => {
+        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
+            res.send(data[0]["productos"]);
+        });
+    });
+});
+
+/* POST productos de un taller */
+
+
+router.post('/:taller/productos/', (req, res, next) => {
+    conn.then(client => {
+        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
+            if (data.length === 0) {
+                res.status(404).send("No existe ese taller");
+            }
+            else {
+                client.db("db").collection("productos").insertOne(req.body).then(resp => {
+                    client.db("db").collection("productos").find({ _id: ObjectId(resp.insertedId) }).toArray((err, data) => {
+                        client.db("db").collection("taller").updateOne({ _id: ObjectId(req.params.taller) }, { $addToSet: { productos: data[0] } });
+                        res.send("Se ha agregado un producto");
+                    });
+                });
+            }
+        });
+    });
+});
 
 module.exports = router;

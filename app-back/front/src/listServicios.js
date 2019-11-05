@@ -6,17 +6,29 @@ class ListServicios extends Component {
 
     constructor(){
         this.state ={
-            list = []
+            list : []
         }
+    }
+
+    componentWillMount() {
+        fetch("/servicios/").then(res => res.json()).then(lista => {
+            console.log(lista);
+            this.setState({
+                list: lista
+            });
+        });
+    }
+    renderServicios(){
+        return this.state.listRobos.map((e,i) => ( 
+            <Servicio value={e} key={i}></Servicio>
+        ));
     }
 
     render() {
         return (
             <div>
                 <CardDeck>
-                    {this.state.list.map((e,i)=>   
-                        <Servicio value={e} key={i}></Servicio>
-                    )}
+                    {this.renderServicios()}
                 </CardDeck>
             </div>
         );

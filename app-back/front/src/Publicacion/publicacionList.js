@@ -20,11 +20,15 @@ class PublicacionList extends Component {
         
         return (
             <div className="row">
+                <div className="container">
+                    <h2>Publicaciones</h2>
                            {this.state.list.map((e,i)=>
-                               
                               <PublicacionCard value={e} key={i}></PublicacionCard>
                             )}
+                    <h2>Hola</h2>
 
+
+            </div>
             </div>
         );
     }
