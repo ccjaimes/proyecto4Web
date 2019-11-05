@@ -4,12 +4,10 @@ import Robo from './robo';
 
 class ListRobos extends Component {
 
-    constructor(){
-        super();
-        this.state={
+    state={
             listRobos : []
         }
-    }
+    
 
     UNSAFE_componentWillMount() {
         var m=JSON.parse(localStorage.getItem('user'));

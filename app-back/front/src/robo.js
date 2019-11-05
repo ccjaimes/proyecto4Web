@@ -3,16 +3,14 @@ import { Card } from 'react-bootstrap';
 
 class Robo extends Component {
 
-    constructor(){
-        super();
-        this.state={
+   state={
             marca: this.props.value.marca,
             tipo: this.props.value.tipo,
             color: this.props.value.color,
             tamano: this.props.value.tamano,
             direccion: this.props.value.direccion
         }
-    }
+    
 
     render() {
         return (
