@@ -4,18 +4,19 @@ import Producto from '../Producto/producto';
 
 class ProductoList extends Component {
 
-    constructor(){
+    constructor(props){
+        super(props);
         this.state ={
-            list = []
+            list : this.props.list
         }
     }
     render() {
         return (
             <div>
                 <CardDeck>
-                    {this.state.list.map((e,i)=>   
-                        <Producto value={e} key={i}></Producto>
-                    )}
+                    {this.state.list.map((e,i)=> {
+                        return <Producto value={e} key={i}></Producto>
+                    })}
                 </CardDeck>
             </div>
         );

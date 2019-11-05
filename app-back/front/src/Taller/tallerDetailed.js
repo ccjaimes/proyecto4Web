@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListServicios from '../listServicios';
+import ProductoList from '../Producto/productoList';
 
 class TallerDetailed extends Component {
    
@@ -43,7 +44,7 @@ class TallerDetailed extends Component {
                             <li className="list-group-item "><strong>Hora de Atencion :</strong> {this.state.taller.horaAtencion}</li>
                              <li className="list-group-item "><strong>Direccion :</strong> {this.state.taller.direccion}</li>
                             <li className="list-group-item "><strong>Servicios disponibles :</strong> <ListServicios list={this.state.serviciosTaller}></ListServicios></li>
-                            <li className="list-group-item "><strong>Productos disponibles :</strong> {this.state.productosTaller}</li>
+                            <li className="list-group-item "><strong>Productos disponibles :</strong> <ProductoList list = {this.state.productosTaller}></ProductoList></li>
                         </ul>
                             </div>
                         </div>

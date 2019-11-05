@@ -14,7 +14,7 @@ class ListRobos extends Component {
     UNSAFE_componentWillMount() {
         var m=JSON.parse(localStorage.getItem('user'));
 
-        var str ="/robos/" + m.nickname
+        var str ="/robos/" + m.nickname + ""
         fetch(str).then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({
