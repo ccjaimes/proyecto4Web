@@ -4,7 +4,7 @@ class Taller extends Component {
     state = {
         talleres: []
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         fetch("/back/talleres/").then(res => res.json()).then(lista => {
             this.setState({
                 talleres: lista

@@ -11,7 +11,7 @@ class ListRobos extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         var m=JSON.parse(localStorage.getItem('user'));
 
         var str ="/robos/" + m.nickname

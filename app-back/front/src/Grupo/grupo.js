@@ -4,7 +4,7 @@ class Grupo extends Component {
     state = {
         grupos: []
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         fetch("/back/grupos/").then(res => res.json()).then(lista => {
             this.setState({
                 grupos: lista

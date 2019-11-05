@@ -4,7 +4,7 @@ import ListServicios from '../listServicios';
 class TallerDetailed extends Component {
    
       
-    componentWillMount()
+    UNSAFE_componentWillMount()
     {
          let idTaller=this.props.match.params.id;
              fetch("/back/talleres/"+idTaller, {
