@@ -71,7 +71,7 @@ class User extends Component {
             
         
         <div className="row">
-            
+            <br></br><br></br><br></br>
                 <div className="col-3">
                 <img src={this.state.picture} className="img-fluid" alt="Institution" width="300" height="300"></img>
 
@@ -91,6 +91,9 @@ class User extends Component {
                   </Button>
                 </div>
                 </div>
+                <br></br>
+                <br></br>
+                <br></br>
                 <br></br>
                 <h3>Nickname:            {this.state.nickname} </h3>
                 <h3>Correo:       {this.state.name} </h3>
