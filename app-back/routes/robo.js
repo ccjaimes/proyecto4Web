@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 /* GET robos de un usuario */
 router.get('/:user', function(req, res) {
     conn.then(client =>{
-        client.db("db").collection("robos").find({usuario:user}).toArray((err, data) => {
+        client.db("db").collection("robos").find({usuario:req.params.user}).toArray((err, data) => {
             res.send(data);
         });
     })

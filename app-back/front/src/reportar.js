@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Modal, Form} from 'react-bootstrap';
 import { Card, Row } from 'react-bootstrap';
+import {Redirect} from 'react-router-dom';
 
 class Reportar extends Component {
 
@@ -13,6 +14,7 @@ class Reportar extends Component {
             color : '',
             tamano : '',
             direccion : '',
+            redirect : false
         }
         this.textInput = React.createRef();
     }
@@ -45,9 +47,27 @@ class Reportar extends Component {
         this.setState({
             show:false
         })
+
+        fetch('/robos/', {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+          }).then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => {console.log('Success:', response);
+          this.setState ({ 
+            redirect: true 
+          }) });
+        
     }
 
-
+    renderRedirect = () => { 
+        if (this.state.redirect) { 
+          return <Redirect to = '/robos' /> 
+        } 
+      }
 
     render() {
         return (
@@ -103,6 +123,7 @@ class Reportar extends Component {
                     </Button>
                     </Modal.Footer>
                 </Modal>
+                {this.renderRedirect()}
             </Row>
         );
     }

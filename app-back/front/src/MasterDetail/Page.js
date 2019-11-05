@@ -47,7 +47,7 @@ class Page extends Component {
                 </Col>
                 <Col xs={12} md={8} lg={8} className="col-8 App__Form">
                 <Switch>
-                    <Route path='/user' auth={this.props.auth} ><User auth={this.props.auth}></User></Route>
+                    <Route exact path='/user' auth={this.props.auth} ><User auth={this.props.auth}></User></Route>
                    <Route path='/reportar' auth={this.props.auth} >
                         <Reportar></Reportar>
                     </Route>
