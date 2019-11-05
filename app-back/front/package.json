@@ -10,7 +10,7 @@
     "history": "^4.10.1",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.11.0", 
+    "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.2.0",
     "start": "^5.1.0"
@@ -35,6 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:3001"
+  }
 }

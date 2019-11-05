@@ -14,7 +14,7 @@ class TallerDetailed extends Component {
                   'Accept': 'application/json'
                  }
           
-              }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos.length, serviciosTaller:taller.servicios.length}) }))
+              }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios}) }))
     }
 
     constructor(props)
@@ -33,7 +33,9 @@ class TallerDetailed extends Component {
                 <div className="row">
                     <div className="col">
                         <h2>Productos</h2>
+                        <ProductoList list = {this.state.productosTaller}></ProductoList>
                     </div>
+                    {console.log(this.state)}
 
                     <div className="col-6">
                     <div className="jumbotron jumbotron-fluid">
@@ -43,14 +45,15 @@ class TallerDetailed extends Component {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item "><strong>Hora de Atencion :</strong> {this.state.taller.horaAtencion}</li>
                              <li className="list-group-item "><strong>Direccion :</strong> {this.state.taller.direccion}</li>
-                            <li className="list-group-item "><strong>Servicios disponibles :</strong> <ListServicios list={this.state.serviciosTaller}></ListServicios></li>
-                            <li className="list-group-item "><strong>Productos disponibles :</strong> <ProductoList list = {this.state.productosTaller}></ProductoList></li>
+                            <li className="list-group-item "><strong>Servicios disponibles :</strong> {this.state.serviciosTaller.length}</li>
+                            <li className="list-group-item "><strong>Productos disponibles :</strong>     {this.state.productosTaller.length}   </li>
                         </ul>
                             </div>
                         </div>
                     </div>
                     <div className="col ">
                         <h2>Servicios</h2>
+                        <ListServicios list={this.state.serviciosTaller}></ListServicios>
                     </div>
 
                 </div>
