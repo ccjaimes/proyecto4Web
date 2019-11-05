@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Grupo extends Component {
     state = {
@@ -25,15 +26,17 @@ class Grupo extends Component {
                             <h3>Crea un grupo</h3>
                             <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                         </div>
-                </div>);
+                    </div>);
             }
             else {
                 retorno.push(
                     <div className="col-12 col-md-4">
-                        <div className="card text-center">
-                            <h3>{e1.nombre}</h3>
-                        </div>
-                </div>);
+                        <Link to={"/grupos/" + e1._id}>
+                            <div className="card text-center py-3">
+                                <h3>{e1.nombre}</h3>
+                            </div>
+                        </Link>
+                    </div>);
             }
 
             if (e2 !== null) {
@@ -44,14 +47,16 @@ class Grupo extends Component {
                                 <h3>Crea un grupo</h3>
                                 <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                             </div>
-                    </div>);
+                        </div>);
                 }
                 else {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <div className="card text-center">
-                                <h3>{e2.nombre}</h3>
-                            </div>
+                            <Link to={"/grupos/" + e2._id}>
+                                <div className="card text-center py-3">
+                                    <h3>{e2.nombre}</h3>
+                                </div>
+                            </Link>
                         </div>);
                 }
             }
@@ -63,14 +68,16 @@ class Grupo extends Component {
                                 <h3>Crea un grupo</h3>
                                 <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                             </div>
-                    </div>);
+                        </div>);
                 }
                 else {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <div className="card text-center">
-                                <h3>{e3.nombre}</h3>
-                            </div>
+                            <Link to={"/grupos/" + e3._id}>
+                                <div className="card text-center py-3">
+                                    <h3>{e3.nombre}</h3>
+                                </div>
+                            </Link>
                         </div>);
                 }
             }
@@ -83,7 +90,7 @@ class Grupo extends Component {
         return (
             <div className="container-fluid">
                 <h1 className="display-4">Grupos disponibles</h1>
-                {this.deployList().map((e) =>{
+                {this.deployList().map((e) => {
                     return e;
                 })}
             </div>

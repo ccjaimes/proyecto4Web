@@ -4,6 +4,7 @@ import { Route, Switch,Link } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import Inicio from './inicio';
 import Grupo from './Grupo/grupo';
+import TallerDetailed from './Taller/tallerDetailed';
 
 class Home extends Component {
     
@@ -58,6 +59,9 @@ class Home extends Component {
                  </Route>
                  <Route path="/grupos">
                    <Grupo></Grupo>
+                 </Route>
+                 <Route path="/talleres/:taller">
+                   <TallerDetailed></TallerDetailed>
                  </Route>
             </Switch>
         </div>
