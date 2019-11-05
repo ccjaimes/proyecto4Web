@@ -18,14 +18,17 @@ class ListServicios extends Component {
             });
         });
     }
+    renderServicios(){
+        return this.state.listRobos.map((e,i) => ( 
+            <Servicio value={e} key={i}></Servicio>
+        ));
+    }
 
     render() {
         return (
             <div>
                 <CardDeck>
-                    {this.state.list.map((e,i)=>   
-                        <Servicio value={e} key={i}></Servicio>
-                    )}
+                    {this.renderServicios()}
                 </CardDeck>
             </div>
         );
