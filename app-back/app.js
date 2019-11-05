@@ -9,8 +9,8 @@ var usersRouter = require('./routes/users');
 var gruposRouter = require('./routes/grupo');
 var tallerRouter = require('./routes/taller');
 var publicacionRouter = require('./routes/publicacion');
-var robosRouter = require('./routes/robos');
-var serviciosRouter = require('./routes/servicios');
+var robosRouter = require('./routes/robo');
+var serviciosRouter = require('./routes/servicio');
 
 
 var app = express();
