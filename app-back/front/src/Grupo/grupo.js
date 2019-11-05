@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {Form, Modal, Button} from 'react-bootstrap';
 
 class Grupo extends Component {
     constructor(){
         super();
-        state = {
+        this.state = {
             show:false,
             grupos: [],
             nombre: '',
