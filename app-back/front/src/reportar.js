@@ -49,8 +49,8 @@ class Reportar extends Component {
         })
 
         fetch('/robos/', {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
+            method: 'POST', 
+            body: JSON.stringify(data), 
             headers:{
               'Content-Type': 'application/json',
               'Accept': 'application/json'
