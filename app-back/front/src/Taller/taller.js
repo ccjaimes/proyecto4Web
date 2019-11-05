@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Button, Modal, Form } from 'react-bootstrap';
 
 class Taller extends Component {
     constructor() {
         super();
         this.state = {
+            show:false,
             talleres: [],
             nombre: '',
             direccion: ''
         };
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
@@ -19,18 +20,23 @@ class Taller extends Component {
             });
         });
     }
-    handleChange(e) {
-        let target = e.target;
-        let value = target.value;
-        let name = target.name;
-
+    handleShow=()=>{
+        console.log(this.state.show)
         this.setState({
-            [name]: value
-        });
+            show : true
+        })
     }
 
+    handleClose =() =>{
+        this.setState({
+            show: false
+        })
+    }
+
+
     handleSubmit(e) {
-        var data = { nombre: this.state.nombre, direccion: this.state.direccion }
+        var data = { nombre: document.getElementById("nombre").value, direccion: document.getElementById("direc").value }
+        console.log(data);
         fetch('/back/talleres/', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
@@ -39,10 +45,33 @@ class Taller extends Component {
             }
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));
+            .then(response => console.log('Success:', response));   
     }
-    deployForm() {
-        return;
+    DeployForm() {
+
+        return <> <Button variant="success" onClick={() => this.handleShow()}>+</Button>
+            <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Crea un Taller</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group controlId="nombre">
+                            <Form.Label>Nombre:</Form.Label>
+                            <Form.Control type="text"/>
+                        </Form.Group>
+                        <Form.Group controlId="direc">
+                            <Form.Label>Dirección:</Form.Label>
+                            <Form.Control type="text"/>
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
+                    <Button variant="success"onClick={this.handleSubmit}>Crear taller</Button>
+                </Modal.Footer>
+            </Modal>
+            </>; 
     }
     deployList() {
         let final = [];
@@ -56,35 +85,7 @@ class Taller extends Component {
                     <div className="col-12 col-md-4">
                         <div className="card border-success text-center">
                             <h3>Crea un Taller</h3>
-                            <button type="button" className="btn btn-success btn-circle btn-xl" data-toggle="modal" data-target="#crear">+</button>
-                            <div className="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="crearlabel" aria-hidden="true">
-                                <div className="modal-dialog" role="document">
-                                    <div className="modal-content">
-                                        <div className="modal-header">
-                                            <h5 className="modal-title" id="crearlabel">Crea un Taller</h5>
-                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div className="modal-body">
-                                            <form onSubmit={this.handleSubmit}>
-                                                <div class="form-group">
-                                                    <label for="nombre" class="col-form-label">Nombre:</label>
-                                                    <input type="text" class="form-control" id="nombrefield" value={this.state.nombre} onChange={this.handleChange} />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="direccion" class="col-form-label">Dirección:</label>
-                                                    <input type="text" class="form-control" id="direccionfield" value={this.state.direccion} onChange={this.handleChange} />
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                            <button type="button" className="btn btn-primary">Crear taller</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {this.DeployForm()}
                         </div>
                     </div>);
             }
@@ -105,35 +106,7 @@ class Taller extends Component {
                         <div className="col-12 col-md-4">
                             <div className="card border-success text-center">
                                 <h3>Crea un Taller</h3>
-                                <button type="button" className="btn btn-success btn-circle btn-xl" data-toggle="modal" data-target="#crear">+</button>
-                                <div className="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="crearlabel" aria-hidden="true">
-                                    <div className="modal-dialog" role="document">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="crearlabel">Crea un Taller</h5>
-                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div className="modal-body">
-                                                <form onSubmit={this.handleSubmit}>
-                                                    <div class="form-group">
-                                                        <label for="nombre" class="col-form-label">Nombre:</label>
-                                                        <input type="text" class="form-control" id="nombrefield" value={this.state.nombre} onChange={this.handleChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="direccion" class="col-form-label">Dirección:</label>
-                                                        <input type="text" class="form-control" id="direccionfield" value={this.state.direccion} onChange={this.handleChange} />
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" className="btn btn-primary">Crear taller</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {this.DeployForm()}
                             </div>
                         </div>);
                 }
@@ -154,35 +127,7 @@ class Taller extends Component {
                         <div className="col-12 col-md-4">
                             <div className="card border-success text-center">
                                 <h3>Crea un Taller</h3>
-                                <button type="button" className="btn btn-success btn-circle btn-xl" data-toggle="modal" data-target="#crear">+</button>
-                                <div className="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="crearlabel" aria-hidden="true">
-                                    <div className="modal-dialog" role="document">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="crearlabel">Crea un Taller</h5>
-                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div className="modal-body">
-                                                <form onSubmit={this.handleSubmit}>
-                                                    <div class="form-group">
-                                                        <label for="nombre" class="col-form-label">Nombre:</label>
-                                                        <input type="text" class="form-control" id="nombrefield" value={this.state.nombre} onChange={this.handleChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="direccion" class="col-form-label">Dirección:</label>
-                                                        <input type="text" class="form-control" id="direccionfield" value={this.state.direccion} onChange={this.handleChange} />
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" className="btn btn-primary">Crear taller</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {this.DeployForm()}
                             </div>
                         </div>);
                 }

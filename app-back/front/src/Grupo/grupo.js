@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Grupo extends Component {
-    state = {
-        grupos: []
+    constructor(){
+        super();
+        state = {
+            show:false,
+            grupos: [],
+            nombre: '',
+            descripcion: ''
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
         fetch("/back/grupos/").then(res => res.json()).then(lista => {
@@ -11,6 +18,59 @@ class Grupo extends Component {
                 grupos: lista
             });
         });
+    }
+    handleShow=()=>{
+        console.log(this.state.show)
+        this.setState({
+            show : true
+        })
+    }
+
+    handleClose =() =>{
+        this.setState({
+            show: false
+        })
+    }
+
+
+    handleSubmit(e) {
+        var data = { nombre: document.getElementById("nombre").value, direccion: document.getElementById("desc").value }
+        console.log(data);
+        fetch('/back/grupos/', {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));   
+    }
+    DeployForm() {
+
+        return <> <Button variant="success" onClick={() => this.handleShow()}>+</Button>
+            <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Crea un Taller</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group controlId="nombre">
+                            <Form.Label>Nombre:</Form.Label>
+                            <Form.Control type="text"/>
+                        </Form.Group>
+                        <Form.Group controlId="desc">
+                            <Form.Label>Descripción:</Form.Label>
+                            <Form.Control type="text"/>
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
+                    <Button variant="success"onClick={this.handleSubmit}>Crear taller</Button>
+                </Modal.Footer>
+            </Modal>
+            </>; 
     }
     deployList() {
         let final = [];
@@ -24,7 +84,7 @@ class Grupo extends Component {
                     <div className="col-12 col-md-4">
                         <div className="card border-success">
                             <h3>Crea un grupo</h3>
-                            <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
+                            {this.DeployForm()}
                         </div>
                     </div>);
             }
@@ -45,7 +105,7 @@ class Grupo extends Component {
                         <div className="col-12 col-md-4">
                             <div className="card border-success">
                                 <h3>Crea un grupo</h3>
-                                <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
+                                {this.DeployForm()}
                             </div>
                         </div>);
                 }
@@ -66,7 +126,7 @@ class Grupo extends Component {
                         <div className="col-12 col-md-4">
                             <div className="card border-success">
                                 <h3>Crea un grupo</h3>
-                                <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
+                                {this.DeployForm()}
                             </div>
                         </div>);
                 }
