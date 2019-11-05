@@ -51,7 +51,6 @@ class User extends Component {
   }
 
   render() {
-      console.log(this.props);
       var m=null;
       if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         m=this.props.location.aboutProps.auth;

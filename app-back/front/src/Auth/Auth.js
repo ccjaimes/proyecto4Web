@@ -48,12 +48,9 @@ export default class Auth {
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        console.log(authResult);
-       
+        
         this.auth0.client.userInfo(authResult.accessToken, (err2, user2)=> {
             // Now you have the user's information
-            console.log("user");
-            console.log(user2);
             
             this.setSession(authResult,user2);
         
