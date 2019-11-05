@@ -12,7 +12,7 @@ Bicicletas PINE es una plataforma que pretende apoyar a los ciclistas de Bogotá
 - Ejecutar npm start
     
 ### Videos
-Link Funcionalidad: https://youtu.be/epo9tjZqGq8
+Link Funcionalidad:
 
 
 ### Dominio: 
