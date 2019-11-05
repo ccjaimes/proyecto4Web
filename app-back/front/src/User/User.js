@@ -102,18 +102,7 @@ class User extends Component {
 
             )
         }
-        {
-          !isAuthenticated() && (
-              <h4>
-                No estas logeado! Por favor{' '}
-                <a style={{ cursor: 'pointer' }}
-                  onClick={this.login.bind(this)}>
-                  Ingresa
-                </a>
-                {' '} para continuar.
-              </h4>
-            )
-        }
+        
       </div>
     );
   }

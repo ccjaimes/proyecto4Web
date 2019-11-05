@@ -52,7 +52,10 @@ class Home extends Component {
             }
             </div>
             <Switch>
-                 <Route exact path='/' component={Inicio}/>
+                 <Route exact path='/' >
+
+                   <Inicio auth={this.props.auth}></Inicio>
+                 </Route>
             </Switch>
         </div>
         );
