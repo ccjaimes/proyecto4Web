@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch,Link } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import Inicio from './inicio';
+import Taller from './Taller/taller'
 
 class Home extends Component {
     
@@ -52,7 +53,15 @@ class Home extends Component {
             }
             </div>
             <Switch>
+<<<<<<< HEAD
                  <Route exact path='/' component={Inicio}/>
+                 
+=======
+                 <Route exact path='/' >
+
+                   <Inicio auth={this.props.auth}></Inicio>
+                 </Route>
+>>>>>>> 788c48ec098b428a47d9325eec0f67953a9d35e4
             </Switch>
         </div>
         );

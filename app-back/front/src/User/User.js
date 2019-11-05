@@ -72,11 +72,13 @@ class User extends Component {
         
         <div className="row">
             
-                <div className="col-3">
-                <img src={this.state.picture} className="img-fluid" alt="Institution" width="300" height="300"></img>
+                <div className="col-5">
+                <br></br>
+                <img src={this.state.picture} className="img-fluid" alt="Institution" width="1000" height="1000"></img>
 
                 </div>
                 <div className="col-7">
+                <br></br><br></br><br></br>
                 <div className="row">
                 <div className="col-7"><h1>{this.state.nickname} </h1> </div>
                 <div id="cerrar"className="col-5">
@@ -91,29 +93,25 @@ class User extends Component {
                   </Button>
                 </div>
                 </div>
-                <br></br>
-                <h3>Nickname:            {this.state.nickname} </h3>
-                <h3>Correo:       {this.state.name} </h3>
+                
              
              
               
         </div>
+        <div>
+        <br></br>
+                <br></br>
+                <br></br>
+                <h3>Nickname:            {this.state.nickname} </h3>
+                <h3>Correo:       {this.state.name} </h3>
+        </div>
+
+        
         </div>
 
             )
         }
-        {
-          !isAuthenticated() && (
-              <h4>
-                No estas logeado! Por favor{' '}
-                <a style={{ cursor: 'pointer' }}
-                  onClick={this.login.bind(this)}>
-                  Ingresa
-                </a>
-                {' '} para continuar.
-              </h4>
-            )
-        }
+        
       </div>
     );
   }

@@ -8,8 +8,11 @@ var sectionStyle = {
     height: "100vh",
     backgroundImage: "url(" + Background + ")",
   };
-
+  
 class Inicio extends Component {
+    signup() {
+        this.props.auth.signup();
+      }
     render() {
         return (
             <div>
@@ -35,7 +38,14 @@ class Inicio extends Component {
                         <Card.Text>
                             Registrate ya!
                         </Card.Text>
-                        <Button>Registrate</Button>
+                        <Button
+                    id="qsLogoutBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.signup.bind(this)}
+                  >
+                    Registrate
+                  </Button>
                         </Card.Body>
                     </Card>
                 </Col>
