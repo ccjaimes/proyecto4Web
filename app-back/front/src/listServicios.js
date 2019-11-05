@@ -4,25 +4,20 @@ import Servicio from './servicio';
 
 class ListServicios extends Component {
 
-    constructor(){
+    constructor(props){
+        super(props);
         this.state ={
-            list : []
+            list : this.props.lista
         }
     }
 
-    componentWillMount() {
-        fetch("/servicios/").then(res => res.json()).then(lista => {
-            console.log(lista);
-            this.setState({
-                list: lista
-            });
-        });
-    }
     renderServicios(){
-        return this.state.listRobos.map((e,i) => ( 
+        return this.state.list.map((e,i) => ( 
             <Servicio value={e} key={i}></Servicio>
         ));
     }
+
+    
 
     render() {
         return (
