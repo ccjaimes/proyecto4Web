@@ -40,7 +40,6 @@ class Inicio extends Component {
                         </Card.Text>
                         <Button
                     id="qsLogoutBtn"
-                    bsStyle="primary"
                     className="btn-margin"
                     onClick={this.signup.bind(this)}
                   >

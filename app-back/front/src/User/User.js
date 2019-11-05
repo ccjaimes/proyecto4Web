@@ -85,7 +85,6 @@ class User extends Component {
 
                 <Button
                     id="qsLogoutBtn"
-                    bsStyle="primary"
                     className="btn-margin"
                     onClick={this.logout.bind(this)}
                   >
