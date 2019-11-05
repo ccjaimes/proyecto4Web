@@ -16,8 +16,21 @@ class Page extends Component {
 
 
     }
+
+    togo() {
+        console.log("voy")
+            ; this.preventDefault();
+    }
     logout() {
         this.props.auth.logout();
+    }
+
+
+    handleOnClick = () => {
+        console.log("voy");
+        window.location.assign("/user");
+
+
     }
     render() {
         return (
@@ -26,22 +39,37 @@ class Page extends Component {
                 <Router>
                     <Row>
                         <Col xs={12} md={4} lg={4} className="App__Aside">
-
                             <ListGroup variant="flush">
+                                <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} >
+                                    <ListGroup.Item action className="List__Group"  >
+                                        <h5 style={{ color: '#D90429' }}>Perfil</h5>
+                                    </ListGroup.Item>
+                                </Link>
+                                <Link to="/grupos" style={{ color: '#D90429' }}>
+                                    <ListGroup.Item action className="List__Group"  >
+                                        <h5 style={{ color: '#D90429' }}>Grupos</h5>
+                                    </ListGroup.Item>
+                                </Link>
+
+
+                                <Link to="/reportar" style={{ color: '#D90429' }}>
+                                    <ListGroup.Item action className="List__Group"  >
+                                        <h5 style={{ color: '#D90429' }}>Reportar Robo</h5>
+                                    </ListGroup.Item>
+
+                                </Link>
+
+                                <Link to="/robos" style={{ color: '#D90429' }}>
+
+                                    <ListGroup.Item action className="List__Group"  >
+                                        <h5 style={{ color: '#D90429' }}>Mis reportes</h5>
+                                    </ListGroup.Item>
+
+                                </Link>
+
+
                                 <ListGroup.Item action className="List__Group" >
-                                    <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} style={{ color: '#D90429' }}>Perfil</Link>
-                                </ListGroup.Item>
-                                <ListGroup.Item action className="List__Group" >
-                                    <Link to="/grupos" style={{ color: '#D90429' }}>Grupos</Link>
-                                </ListGroup.Item>
-                                <ListGroup.Item action className="List__Group" >
-                                    <Link to="/reportar" style={{ color: '#D90429' }}>Reportar Robo</Link>
-                                </ListGroup.Item>
-                                <ListGroup.Item action className="List__Group" >
-                                    <Link to="/robos" style={{ color: '#D90429' }}>Mis reportes</Link>
-                                </ListGroup.Item>
-                                <ListGroup.Item action className="List__Group" >
-                                    <NavLink onClick={this.logout.bind(this)} style={{ color: '#D90429' }}>Cerrar Sesión</NavLink>
+                                    <NavLink onClick={this.logout.bind(this)} style={{ color: '#D90429' }}><h5 style={{ color: '#D90429' }}>Cerrar Sesión</h5></NavLink>
                                 </ListGroup.Item>
                             </ListGroup>
                         </Col>
