@@ -7,7 +7,7 @@ class ListServicios extends Component {
     constructor(props){
         super(props);
         this.state ={
-            list : this.props.lista
+            list : this.props.list
         }
     }
 

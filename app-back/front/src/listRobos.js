@@ -4,17 +4,15 @@ import Robo from './robo';
 
 class ListRobos extends Component {
 
-    constructor(){
-        super();
-        this.state={
+    state={
             listRobos : []
         }
-    }
+    
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         var m=JSON.parse(localStorage.getItem('user'));
 
-        var str ="/robos/" + m.nickname
+        var str ="/robos/" + m.nickname + ""
         fetch(str).then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({

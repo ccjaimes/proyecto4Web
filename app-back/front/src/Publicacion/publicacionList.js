@@ -25,9 +25,12 @@ class PublicacionList extends Component {
                            {this.state.list.map((e,i)=>
                               <PublicacionCard value={e} key={i}></PublicacionCard>
                             )}
-                    <h2>Hola</h2>
+<<<<<<< HEAD
+                    
 
 
+=======
+>>>>>>> ecd54fc6ea6b662eb240effcc2aca28fd153f781
             </div>
             </div>
         );
