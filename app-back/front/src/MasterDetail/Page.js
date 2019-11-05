@@ -7,6 +7,7 @@ import {ListGroup, Row, Container, Col} from 'react-bootstrap';
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
 import User from '../User/User';
+import ListRobos from '../listRobos';
 
 
 class Page extends Component {
@@ -34,10 +35,10 @@ class Page extends Component {
                         <Link to="/grupos" style={{ color: '#D90429' }}>Grupos</Link>
                     </ListGroup.Item>
                     <ListGroup.Item action  className="List__Group" >
-                        <Link to="/servicios" style={{ color: '#D90429' }}>Servicios</Link>
+                        <Link to="/reportar" style={{ color: '#D90429' }}>Reportar Robo</Link> 
                     </ListGroup.Item>
                     <ListGroup.Item action  className="List__Group" >
-                        <Link to="/reportar" style={{ color: '#D90429' }}>Reportar Robo</Link> 
+                        <Link to="/robos" style={{ color: '#D90429' }}>Mis reportes</Link> 
                     </ListGroup.Item>
                     <ListGroup.Item action  className="List__Group" >
                         <NavLink onClick={this.logout.bind(this)} style={{ color: '#D90429' }}>Cerrar Sesión</NavLink> 
@@ -52,6 +53,9 @@ class Page extends Component {
                     </Route>
                     <Route path="/grupos">
                         <Grupo></Grupo>
+                    </Route>
+                    <Route path="/robos">
+                        <ListRobos></ListRobos>
                     </Route>
                 </Switch>
                 </Col>

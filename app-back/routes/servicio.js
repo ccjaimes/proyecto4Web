@@ -10,27 +10,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res) {
     conn.then(client =>{
-        client.db("db").collection("robos").find({}).toArray((err, data) => {
+        client.db("db").collection("servicios").find({}).toArray((err, data) => {
             res.send(data);
         });
     })
 });
 
-/* GET robos de un usuario */
-router.get('/:user', function(req, res) {
-    conn.then(client =>{
-        client.db("db").collection("robos").find({usuario:user}).toArray((err, data) => {
-            res.send(data);
-        });
-    })
-});
-
-
-router.post("/", (req, res) => {
-    conn.then(client => {
-        client.db("db").collection("robos").insertOne(req.body);
-        res.send("El robo ha sido registrado");
-    });
-});
 
 module.exports = router;

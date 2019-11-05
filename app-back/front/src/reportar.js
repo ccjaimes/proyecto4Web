@@ -34,7 +34,8 @@ class Reportar extends Component {
     handleSubmit = e =>{
         e.preventDefault();
 
-        var data = {marca:document.getElementById("formGroupMarca").value,
+        var data = { user: localStorage.getItem("user"),
+            marca:document.getElementById("formGroupMarca").value,
                     tipo:document.getElementById("formGroupTipo").value,
                     color:document.getElementById("formGroupColor").value,
                     tamano: document.getElementById("formGroupTamanho").value,

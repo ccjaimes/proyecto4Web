@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap';
 class Robo extends Component {
 
     constructor(){
+        super();
         this.state={
             marca: this.props.value.marca,
             tipo: this.props.value.tipo,
@@ -19,7 +20,7 @@ class Robo extends Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>
-                            
+
                         </Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Marca</Card.Subtitle>
                         <Card.Text>

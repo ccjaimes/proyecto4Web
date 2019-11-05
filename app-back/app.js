@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var gruposRouter = require('./routes/grupo');
 var tallerRouter = require('./routes/taller');
 var publicacionRouter = require('./routes/publicacion');
+var robosRouter = require('./routes/robos');
+var serviciosRouter = require('./routes/servicios');
 
 
 var app = express();
@@ -28,6 +30,10 @@ app.use('/users', usersRouter);
 app.use('/back/grupos/', gruposRouter);
 app.use('/back/talleres/', tallerRouter);
 app.use('/publicaciones', publicacionRouter);
+
+app.use('/servicios', serviciosRouter);
+
+app.use('/robos', robosRouter);
 
 
 // catch 404 and forward to error handler
