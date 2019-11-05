@@ -35,8 +35,9 @@ class Reportar extends Component {
 
     handleSubmit = e =>{
         e.preventDefault();
+        var m=JSON.parse(localStorage.getItem('user'));
 
-        var data = { user: localStorage.getItem("user"),
+        var data = { user: m.nickname,
             marca:document.getElementById("formGroupMarca").value,
                     tipo:document.getElementById("formGroupTipo").value,
                     color:document.getElementById("formGroupColor").value,
