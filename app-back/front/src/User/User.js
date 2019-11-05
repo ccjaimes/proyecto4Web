@@ -28,7 +28,7 @@ class User extends Component {
   componentWillUnmount () {
     localStorage.setItem('user', JSON.stringify(this.state));
   }
-
+  
   login() {
     if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         this.props.location.aboutProps.auth.login();
@@ -51,7 +51,6 @@ class User extends Component {
   }
 
   render() {
-      console.log(this.props);
       var m=null;
       if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         m=this.props.location.aboutProps.auth;
@@ -71,19 +70,20 @@ class User extends Component {
             
         
         <div className="row">
-            <br></br><br></br><br></br>
-                <div className="col-3">
-                <img src={this.state.picture} className="img-fluid" alt="Institution" width="300" height="300"></img>
+            
+                <div className="col-5">
+                <br></br>
+                <img src={this.state.picture} className="img-fluid" alt="Institution" width="1000" height="1000"></img>
 
                 </div>
                 <div className="col-7">
+                <br></br><br></br><br></br>
                 <div className="row">
                 <div className="col-7"><h1>{this.state.nickname} </h1> </div>
                 <div id="cerrar"className="col-5">
 
                 <Button
                     id="qsLogoutBtn"
-                    bsStyle="primary"
                     className="btn-margin"
                     onClick={this.logout.bind(this)}
                   >
@@ -91,16 +91,20 @@ class User extends Component {
                   </Button>
                 </div>
                 </div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <h3>Nickname:            {this.state.nickname} </h3>
-                <h3>Correo:       {this.state.name} </h3>
+                
              
              
               
         </div>
+        <div>
+        <br></br>
+                <br></br>
+                <br></br>
+                <h3>Nickname:            {this.state.nickname} </h3>
+                <h3>Correo:       {this.state.name} </h3>
+        </div>
+
+        
         </div>
 
             )

@@ -12,7 +12,9 @@ class ListRobos extends Component {
     }
 
     componentWillMount() {
-        var str ="/robos/" + localStorage.getItem("user")
+        var m=JSON.parse(localStorage.getItem('user'));
+
+        var str ="/robos/" + m.nickname
         fetch(str).then(res => res.json()).then(lista => {
             console.log(lista);
             this.setState({
