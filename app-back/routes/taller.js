@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
 
 router.get('/:taller/productos', (req, res, next) => {
     conn.then(client => {
-        client.db("db").collection("taller").find({ _id: ObjectId(req.params.grupo) }).toArray((err, data) => {
+        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
             res.send(data[0]["productos"]);
         });
     });
@@ -50,7 +50,7 @@ router.get('/:taller/productos', (req, res, next) => {
 
 router.post('/:taller/productos/', (req, res, next) => {
     conn.then(client => {
-        client.db("db").collection("taller").find({ _id: ObjectId(req.params.grupo) }).toArray((err, data) => {
+        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
             if (data.length === 0) {
                 res.status(404).send("No existe ese taller");
             }
