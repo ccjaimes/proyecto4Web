@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import NavLink from 'react-bootstrap/NavLink';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { ListGroup, Row, Container, Col } from 'react-bootstrap';
+import { ListGroup, Row, Col } from 'react-bootstrap';
 
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
@@ -38,10 +38,10 @@ class Page extends Component {
             
                 <Router>
                     <Row>
-                        <Col xs={12} md={4} lg={4} className="App__Aside">
-                            <ListGroup variant="flush">
+                        <Col xs={12} md={3} lg={3} className="App__Aside">
+                            <ListGroup variant="flush" className="text-center">
                                 
-                                <ListGroup.Item action className="List__Group"  >
+                                <ListGroup.Item action className="List__Group" >
                                     <h5 style={{ color: '#D90429' }}>Bicicletas</h5>
                                 </ListGroup.Item>
                                 
@@ -78,7 +78,7 @@ class Page extends Component {
                                 </ListGroup.Item>
                             </ListGroup>
                         </Col>
-                        <Col xs={12} md={8} lg={8} className="col-8 App__Form">
+                        <Col xs={12} md={9} lg={9} className="col-8 App__Form">
                             <Switch>
                                 <Route exact path='/page/' ><User auth={this.props.auth}></User></Route>
 
