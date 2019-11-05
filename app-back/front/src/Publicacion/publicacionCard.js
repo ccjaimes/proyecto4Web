@@ -11,7 +11,7 @@ import React from 'react';
     <section className="content">
       <div className="container">
          <div className="row">
-          <div className='col-lg-8 col-md-8'>
+          <div className='col-lg-12 col-md-12'>
            
             <div className="post">
               <div className="wrap-ut pull-left">
@@ -22,7 +22,7 @@ import React from 'react';
                 </div>
                 <div className="posttext pull-left">
                 <h6 className="date">Yesterday at 04:00 AM </h6>
-                <p>Hello, my ... {this.state.contenido}</p>
+                <p>Hello, my {this.state.contenido} ...</p>
               </div>
              
               </div>
@@ -33,9 +33,7 @@ import React from 'react';
             
            
           </div>
-          <div className='col-lg-4 col-md-4'>
-            
-          </div>
+          
          </div>
       </div>
     </section>
