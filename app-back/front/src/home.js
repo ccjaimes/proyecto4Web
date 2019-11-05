@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Route, Switch,Link } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import Inicio from './inicio';
-import Taller from './Taller/taller'
 
 class Home extends Component {
     
