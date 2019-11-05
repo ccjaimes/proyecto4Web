@@ -1,9 +1,8 @@
 import React from 'react';
 
-export default class PublicacionCard extends React.Component {
+ class PublicacionCard extends React.Component {
   state={
     contenido: this.props.value.contenido,
-    fecha: this.props.value.fecha,
 }
       render() {
         return (
@@ -22,7 +21,7 @@ export default class PublicacionCard extends React.Component {
                   </div>
                 </div>
                 <div className="posttext pull-left">
-                <h6 className="date">Yesterday at 04:00 AM {this.state.fecha}</h6>
+                <h6 className="date">Yesterday at 04:00 AM </h6>
                 <p>Hello, my ... {this.state.contenido}</p>
               </div>
              
@@ -46,5 +45,5 @@ export default class PublicacionCard extends React.Component {
 );
 }
 }
-  
+export default PublicacionCard;
 				              
