@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch,Link } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import Inicio from './inicio';
+import Grupo from './Grupo/grupo';
 
 class Home extends Component {
     
@@ -54,6 +55,9 @@ class Home extends Component {
                    <Inicio auth={this.props.auth}></Inicio>
                  </Route>
                  <Route path="/talleres">
+                 </Route>
+                 <Route path="/grupos">
+                   <Grupo></Grupo>
                  </Route>
             </Switch>
         </div>

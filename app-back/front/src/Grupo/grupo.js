@@ -6,76 +6,75 @@ class Grupo extends Component {
     }
     componentWillMount() {
         fetch("/back/grupos/").then(res => res.json()).then(lista => {
-            console.log(lista);
             this.setState({
                 grupos: lista
             });
         });
     }
     deployList() {
-        let final;
+        let final = [];
         for (let i = 0; i <= this.state.grupos.length; i += 3) {
-            let retorno;
+            let retorno = [];
             let e1 = i === this.state.grupos.length ? -1 : this.state.grupos[i];
             let e2 = i + 1 < this.state.grupos.length ? this.state.grupos[i + 1] : i + 1 === this.state.grupos.length ? -1 : null;
             let e3 = i + 2 < this.state.grupos.length ? this.state.grupos[i + 2] : i + 2 === this.state.grupos.length ? -1 : null;
             if (e1 === -1) {
-                retorno +=
+                retorno.push(
                     <div className="col-12 col-md-4">
                         <div className="card border-success">
                             <h3>Crea un grupo</h3>
                             <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                         </div>
-                    </div>;
+                </div>);
             }
             else {
-                retorno +=
+                retorno.push(
                     <div className="col-12 col-md-4">
                         <div className="card text-center">
                             <h3>{e1.nombre}</h3>
                         </div>
-                    </div>;
+                </div>);
             }
 
             if (e2 !== null) {
                 if (e2 === -1) {
-                    retorno +=
+                    retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card border-success">
                                 <h3>Crea un grupo</h3>
                                 <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                             </div>
-                        </div>;
+                    </div>);
                 }
                 else {
-                    retorno +=
+                    retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card text-center">
                                 <h3>{e2.nombre}</h3>
                             </div>
-                        </div>
+                        </div>);
                 }
             }
             if (e3 !== null) {
                 if (e3 === -1) {
-                    retorno +=
+                    retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card border-success">
                                 <h3>Crea un grupo</h3>
                                 <button type="button" class="btn btn-success btn-circle btn-xl">+</button>
                             </div>
-                        </div>;
+                    </div>);
                 }
                 else {
-                    retorno +=
+                    retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card text-center">
                                 <h3>{e3.nombre}</h3>
                             </div>
-                        </div>
+                        </div>);
                 }
             }
-            final += <div className="row">{retorno}</div>;
+            final.push(<div className="row">{retorno}</div>);
 
         }
         return final;
@@ -84,7 +83,9 @@ class Grupo extends Component {
         return (
             <div className="container-fluid">
                 <h1 className="display-4">Grupos disponibles</h1>
-                {this.deployList()}
+                {this.deployList().map((e) =>{
+                    return e;
+                })}
             </div>
         );
     }
