@@ -29,10 +29,12 @@ class Home extends Component {
         const { isAuthenticated } = this.props.auth;
 
         return (
-            <div >
-            <div style={{paddingTop: "50px"}}>
+            <div>
             {
               !isAuthenticated() && (
+                <div >
+                <div style={{paddingTop: "50px"}}>
+            
                 <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
                 <Navbar.Brand href="#home">Bicicletas</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -44,13 +46,8 @@ class Home extends Component {
             </Nav>
             </Navbar.Collapse>
             </Navbar>
-            
-       
-                 
-                )
-               
-            }
             </div>
+       
             <Switch>
                  <Route exact path='/' >
 
@@ -58,6 +55,11 @@ class Home extends Component {
                  </Route>
             </Switch>
         </div>
+                 
+                )
+               
+            }
+            </div>
         );
     }
 }

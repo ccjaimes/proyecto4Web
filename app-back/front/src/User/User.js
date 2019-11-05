@@ -28,7 +28,7 @@ class User extends Component {
   componentWillUnmount () {
     localStorage.setItem('user', JSON.stringify(this.state));
   }
-
+  
   login() {
     if((this.props.location!==undefined)&&(this.props.location.aboutProps!==undefined)&&(this.props.location.aboutProps.auth!==undefined)){
         this.props.location.aboutProps.auth.login();
