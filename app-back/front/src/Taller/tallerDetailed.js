@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListServicios from '../listServicios';
-import ProductoList from '../Producto/productoList';
+import Producto from '../Producto/producto';
+
 
 class TallerDetailed extends Component {
    
@@ -16,6 +17,8 @@ class TallerDetailed extends Component {
           
               }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios}) }))
     }
+   
+    
 
     constructor(props)
     {
@@ -33,7 +36,9 @@ class TallerDetailed extends Component {
                 <div className="row">
                     <div className="col">
                         <h2>Productos</h2>
-                        <ProductoList list = {this.state.productosTaller}></ProductoList>
+                        {this.state.productosTaller.map((e,i)=> {
+                        return <Producto value={e} key={i}></Producto>
+                    })}
                     </div>
                     {console.log(this.state)}
 
