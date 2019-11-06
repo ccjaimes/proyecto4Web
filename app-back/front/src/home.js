@@ -38,7 +38,8 @@ class Home extends Component {
                 <div style={{paddingTop: "50px"}}>
             
                 <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-                <Navbar.Brand href="#home">Bicicletas</Navbar.Brand>
+                <Navbar.Brand href="#home"> <img src="https://i.ibb.co/k3WNNYC/icon5.png" className="img-fluid" alt="Institution" width="80" height="30"></img>
+</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
