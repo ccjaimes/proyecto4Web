@@ -49,7 +49,7 @@ class Taller extends Component {
     }
     DeployForm() {
 
-        return <> <Button variant="success" onClick={() => this.handleShow()}>+</Button>
+        return <> <Button variant="danger" onClick={() => this.handleShow()}>+</Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Crea un Taller</Modal.Title>
@@ -85,7 +85,7 @@ class Taller extends Component {
                 {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <div className="card border-success text-center my-2">
+                            <div className="card border-danger text-center my-2">
                                 <h3>Crea un Taller</h3>
                                 {this.DeployForm()}
                             </div>

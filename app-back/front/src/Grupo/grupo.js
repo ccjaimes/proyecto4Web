@@ -49,10 +49,10 @@ class Grupo extends Component {
     }
     DeployForm() {
 
-        return <> <Button variant="success" onClick={() => this.handleShow()}>+</Button>
+        return <> <Button variant="danger" onClick={() => this.handleShow()}>+</Button>
             <Modal show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Crea un Taller</Modal.Title>
+                    <Modal.Title>Crea un Grupo</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={this.handleSubmit}>
@@ -68,7 +68,7 @@ class Grupo extends Component {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
-                    <Button variant="success"onClick={this.handleSubmit}>Crear taller</Button>
+                    <Button variant="success"onClick={this.handleSubmit}>Crear Grupo</Button>
                 </Modal.Footer>
             </Modal>
             </>; 
@@ -104,7 +104,7 @@ class Grupo extends Component {
                 if (e2 === -1) {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <div className="card border-success">
+                            <div className="card border-danger text-center my-2">
                                 <h3>Crea un grupo</h3>
                                 {this.DeployForm()}
                             </div>
@@ -150,7 +150,14 @@ class Grupo extends Component {
     render() {
         return (
             <div className="container-fluid">
+                <br>
+                </br>
                 <h1 className="display-4">Grupos disponibles</h1>
+                <br>
+                </br>
+                <br>
+                </br>
+                
                 {this.deployList().map((e) => {
                     return e;
                 })}
