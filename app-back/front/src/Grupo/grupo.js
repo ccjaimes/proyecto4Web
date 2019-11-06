@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Form, Modal, Button} from 'react-bootstrap';
+import { Form, Modal, Button } from 'react-bootstrap';
 
 class Grupo extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            show:false,
+            show: false,
             grupos: [],
             nombre: '',
             descripcion: ''
@@ -20,14 +20,14 @@ class Grupo extends Component {
             });
         });
     }
-    handleShow=()=>{
+    handleShow = () => {
         console.log(this.state.show)
         this.setState({
-            show : true
+            show: true
         })
     }
 
-    handleClose =() =>{
+    handleClose = () => {
         this.setState({
             show: false
         })
@@ -45,7 +45,7 @@ class Grupo extends Component {
             }
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));   
+            .then(response => console.log('Success:', response));
     }
     DeployForm() {
 
@@ -58,20 +58,20 @@ class Grupo extends Component {
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="nombre">
                             <Form.Label>Nombre:</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" />
                         </Form.Group>
                         <Form.Group controlId="desc">
                             <Form.Label>Descripción:</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.handleClose}>Cancelar</Button>
-                    <Button variant="success"onClick={this.handleSubmit}>Crear Grupo</Button>
+                    <Button variant="success" onClick={this.handleSubmit}>Crear Grupo</Button>
                 </Modal.Footer>
             </Modal>
-            </>; 
+        </>;
     }
     deployList() {
         let final = [];
@@ -157,7 +157,7 @@ class Grupo extends Component {
                 </br>
                 <br>
                 </br>
-                
+
                 {this.deployList().map((e) => {
                     return e;
                 })}

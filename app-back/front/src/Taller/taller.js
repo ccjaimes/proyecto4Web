@@ -36,12 +36,12 @@ class Taller extends Component {
 
     handleSubmit(e) {
         var data = { nombre: document.getElementById("nombre").value, direccion: document.getElementById("direc").value }
-        console.log(data);
         fetch('/back/talleres/', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         }).then(res => res.json())
             .catch(error => console.error('Error:', error))

@@ -38,12 +38,13 @@ class Home extends Component {
                 <div style={{paddingTop: "50px"}}>
             
                 <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-                <Navbar.Brand href="#home"> <img src="https://i.ibb.co/k3WNNYC/icon5.png" className="img-fluid" alt="Institution" width="80" height="30"></img>
+                <Navbar.Brand> <Link to="/"><img src="https://i.ibb.co/k3WNNYC/icon5.png" className="img-fluid" alt="Institution" width="80" height="30"></img></Link>  
 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/talleres">Talleres</Nav.Link>
                 <Nav.Link onClick={this.signup.bind(this)}>Registrarse</Nav.Link>
                 <Nav.Link onClick={this.login.bind(this)}>Login</Nav.Link>
             </Nav>
