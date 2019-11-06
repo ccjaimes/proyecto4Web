@@ -81,19 +81,22 @@ class Taller extends Component {
             let e2 = i + 1 < this.state.talleres.length ? this.state.talleres[i + 1] : i + 1 === this.state.talleres.length ? -1 : null;
             let e3 = i + 2 < this.state.talleres.length ? this.state.talleres[i + 2] : i + 2 === this.state.talleres.length ? -1 : null;
             if (e1 === -1) {
-                retorno.push(
-                    <div className="col-12 col-md-4">
-                        <div className="card border-success text-center">
-                            <h3>Crea un Taller</h3>
-                            {this.DeployForm()}
-                        </div>
-                    </div>);
+                if(localStorage.getItem('accessToken') !== null)
+                {
+                    retorno.push(
+                        <div className="col-12 col-md-4">
+                            <div className="card border-success text-center my-2">
+                                <h3>Crea un Taller</h3>
+                                {this.DeployForm()}
+                            </div>
+                        </div>);
+                }
             }
             else {
                 retorno.push(
                     <div className="col-12 col-md-4">
-                        <Link to={"/talleres/" + e1._id}>
-                            <div className="card text-center py-3">
+                        <Link style={{textDecoration:'none'}} to={"/talleres/" + e1._id}>
+                            <div className="card text-center py-3 my-2">
                                 <h3>{e1.nombre}</h3>
                             </div>
                         </Link>
@@ -102,19 +105,22 @@ class Taller extends Component {
 
             if (e2 !== null) {
                 if (e2 === -1) {
-                    retorno.push(
-                        <div className="col-12 col-md-4">
-                            <div className="card border-success text-center">
-                                <h3>Crea un Taller</h3>
-                                {this.DeployForm()}
-                            </div>
-                        </div>);
+                    if(localStorage.getItem('accessToken') !== null)
+                    {
+                        retorno.push(
+                            <div className="col-12 col-md-4">
+                                <div className="card border-success text-center my-2">
+                                    <h3>Crea un Taller</h3>
+                                    {this.DeployForm()}
+                                </div>
+                            </div>);
+                    }
                 }
                 else {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <Link to={"/talleres/" + e2._id}>
-                                <div className="card text-center py-3">
+                            <Link style={{textDecoration:'none'}} to={"/talleres/" + e2._id}>
+                                <div className="card text-center py-3 my-2">
                                     <h3>{e2.nombre}</h3>
                                 </div>
                             </Link>
@@ -123,19 +129,22 @@ class Taller extends Component {
             }
             if (e3 !== null) {
                 if (e3 === -1) {
-                    retorno.push(
-                        <div className="col-12 col-md-4">
-                            <div className="card border-success text-center">
-                                <h3>Crea un Taller</h3>
-                                {this.DeployForm()}
-                            </div>
-                        </div>);
+                    if(localStorage.getItem('accessToken') !== null)
+                    {
+                        retorno.push(
+                            <div className="col-12 col-md-4">
+                                <div className="card border-success text-center my-2">
+                                    <h3>Crea un Taller</h3>
+                                    {this.DeployForm()}
+                                </div>
+                            </div>);
+                    }
                 }
                 else {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <Link to={"/talleres/" + e3._id}>
-                                <div className="card text-center py-3">
+                            <Link style={{textDecoration:'none'}} to={"/talleres/" + e3._id}>
+                                <div className="card text-center py-3 my-2">
                                     <h3>{e3.nombre}</h3>
                                 </div>
                             </Link>
@@ -148,7 +157,7 @@ class Taller extends Component {
     }
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid text-center">
                 <h1 className="display-4">Talleres</h1>
                 {this.deployList().map((e) => {
                     return e;
