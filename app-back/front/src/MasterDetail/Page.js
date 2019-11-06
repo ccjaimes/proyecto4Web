@@ -45,7 +45,9 @@ class Page extends Component {
                             <ListGroup variant="flush" className="text-center">
                                 
                                 <ListGroup.Item action className="List__Group" >
-                                    <h5 style={{ color: '#D90429' }}>Bicicletas</h5>
+                                    
+                                    <img src="https://i.ibb.co/2ZqqZ8t/icon3.png" className="img-fluid" alt="Institution" width="120" height="120"></img>
+
                                 </ListGroup.Item>
                                 
                                 <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} >
