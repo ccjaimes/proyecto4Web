@@ -6,6 +6,7 @@ import { ListGroup, Row, Col } from 'react-bootstrap';
 
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
+import GrupoDetailed from '../Grupo/GrupoDetailed';
 import User from '../User/User';
 import ListRobos from '../listRobos';
 
@@ -88,6 +89,9 @@ class Page extends Component {
                                 </Route>
                                 <Route path="/grupos">
                                     <Grupo></Grupo>
+                                </Route>
+                                <Route path="/grupos/:grupo">
+                                    <GrupoDetailed></GrupoDetailed>
                                 </Route>
                                 <Route path="/robos">
                                     <ListRobos></ListRobos>
