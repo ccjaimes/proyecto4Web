@@ -13,7 +13,7 @@ class GrupoDetailed extends Component {
                   'Accept': 'application/json'
                  }
           
-              }).then(data=>(data.json()).then(grupo=> {this.setState({grupoNombre:grupo.nombre, publicacionesGrupo: grupos.publicaciones}) }))
+              }).then(data=>(data.json()).then(grupo=> {this.setState({grupoNombre:grupo.nombre, publicacionesGrupo: grupo.publicaciones}) }))
     }
 
     constructor(props)

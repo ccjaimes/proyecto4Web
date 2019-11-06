@@ -6,6 +6,7 @@ import { ListGroup, Row, Col } from 'react-bootstrap';
 
 import Reportar from '../reportar';
 import Grupo from '../Grupo/grupo';
+import GrupoDetailed from '../Grupo/GrupoDetailed';
 import User from '../User/User';
 import ListRobos from '../listRobos';
 import Taller from '../Taller/taller';
@@ -99,7 +100,10 @@ class Page extends Component {
                                 <Route path="/grupos" render ={(props)=><Grupo auth={this.props.auth} {...props}/>}>
                                 </Route>
                                 <Route path="/robos" render ={(props)=><ListRobos auth={this.props.auth} {...props}/>}>
+                                    </Route>
+                                <Route path="/grupos/:grupo" render ={(props)=><GrupoDetailed auth={this.props.auth} {...props}/>}>>
                                 </Route>
+                                
                             </Switch>
                         </Col>
 
