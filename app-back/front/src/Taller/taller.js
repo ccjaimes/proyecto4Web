@@ -109,7 +109,7 @@ class Taller extends Component {
                     {
                         retorno.push(
                             <div className="col-12 col-md-4">
-                                <div className="card border-success text-center my-2">
+                                <div className="card border-danger text-center my-2">
                                     <h3>Crea un Taller</h3>
                                     {this.DeployForm()}
                                 </div>
@@ -133,7 +133,7 @@ class Taller extends Component {
                     {
                         retorno.push(
                             <div className="col-12 col-md-4">
-                                <div className="card border-success text-center my-2">
+                                <div className="card border-danger text-center my-2">
                                     <h3>Crea un Taller</h3>
                                     {this.DeployForm()}
                                 </div>

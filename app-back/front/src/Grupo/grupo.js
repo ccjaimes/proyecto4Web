@@ -83,7 +83,7 @@ class Grupo extends Component {
             if (e1 === -1) {
                 retorno.push(
                     <div className="col-12 col-md-4">
-                        <div className="card border-success">
+                        <div className="card border-danger text-center my-2">
                             <h3>Crea un grupo</h3>
                             {this.DeployForm()}
                         </div>
@@ -125,7 +125,7 @@ class Grupo extends Component {
                 if (e3 === -1) {
                     retorno.push(
                         <div className="col-12 col-md-4">
-                            <div className="card border-success">
+                            <div className="card border-danger text-center my-2">
                                 <h3>Crea un grupo</h3>
                                 {this.DeployForm()}
                             </div>
