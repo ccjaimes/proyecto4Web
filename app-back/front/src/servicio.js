@@ -3,14 +3,32 @@ import {Card} from 'react-bootstrap';
 
 class Servicio extends Component {
 
+    UNSAFE_componentWillMount()
+    {
+         let id=this.props.value.id;
+             fetch("/servicios/"+id, {
+                headers : { 
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                 }
+          
+              }).then(data=>(data.json()).then(t=> {this.setState({id:id, nombre: t.nombre, tipo:t.tipo}) }))
+    }
     constructor(props){
         super(props);
+        console.log("voy2");
+
         this.state={
-            nombre:this.props.value.nombre,
-            tipo:this.props.value.tipo
+            id:this.props.value.id,
+            nombre:"",
+            tipo:""
         }
+
+
+
     }
 
+    
     render() {
         return (
             <div>

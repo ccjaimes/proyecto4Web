@@ -15,6 +15,12 @@ router.get('/', function(req, res) {
         });
     })
 });
-
+router.get("/:taller", (req, res) => {
+    conn.then(client => {
+        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
+            res.send(data[0]);
+        });
+    });
+});
 
 module.exports = router;

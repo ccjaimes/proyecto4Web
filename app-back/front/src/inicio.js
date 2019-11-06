@@ -40,7 +40,7 @@ class Inicio extends Component {
                         </Card.Text>
                         <Button
                     id="qsLogoutBtn"
-                    className="btn-margin"
+                    className="btn btn-danger btn-lg"
                     onClick={this.signup.bind(this)}
                   >
                     Registrate

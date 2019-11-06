@@ -16,3 +16,8 @@
     border-radius: 0;
 }
 
+.circular--square {
+  border-radius: 50%;
+  overflow: hidden;
+}
+

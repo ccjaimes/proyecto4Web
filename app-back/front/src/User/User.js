@@ -73,16 +73,20 @@ class User extends Component {
             
                 <div className="col-5">
                 <br></br>
-                <img src={this.state.picture} className="img-fluid" alt="Institution" width="1000" height="1000"></img>
+                <div className="circular--square" >
+                <img src={this.state.picture} className="img-fluid" alt="Image perfil usuario." width="800" height="800" ></img>
 
+                </div>
+                
                 </div>
                 <div className="col-7">
                 <br></br><br></br><br></br>
+                <br></br><br></br>
                 <div className="row">
                 <div className="col-7"><h1>{this.state.nickname} </h1> </div>
                 <div id="cerrar"className="col-5">
 
-                <Button
+                <Button className="btn btn-danger btn-lg"
                    onClick={this.logout.bind(this)}
                   >
                     Log Out
@@ -98,8 +102,26 @@ class User extends Component {
         <br></br>
                 <br></br>
                 <br></br>
-                <h3>Nickname:            {this.state.nickname} </h3>
-                <h3>Correo:       {this.state.name} </h3>
+                
+<table className="table table-borderless">
+  <thead>
+    
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><h3>Nickname:</h3></th>
+      <td> <h3>  {this.state.nickname} </h3></td>
+      
+    </tr>
+    <tr>
+      <th scope="row"> <h3>Correo:  </h3></th>
+      <td> <h3> {this.state.name} </h3></td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+               
         </div>
 
         
