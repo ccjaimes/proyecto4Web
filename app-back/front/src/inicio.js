@@ -37,7 +37,7 @@ class Inicio extends Component {
                         </Card.Text>
                         <Card.Text>
                             Registrate ya!
-                        </Card.Text>
+                        </Card.Text> 
                         <Button
                     id="qsLogoutBtn"
                     className="btn btn-danger btn-lg"

@@ -5,18 +5,22 @@ class Servicio extends Component {
 
     UNSAFE_componentWillMount()
     {
-         let id=this.props.value.id;
-             fetch("/servicios/"+id, {
+         var id2=this.state.id;
+         let m="/servicios/"+id2;
+          fetch(m, {
+                method: 'GET',
                 headers : { 
                   'Content-Type': 'application/json',
                   'Accept': 'application/json'
                  }
           
-              }).then(data=>(data.json()).then(t=> {this.setState({id:id, nombre: t.nombre, tipo:t.tipo}) }))
+              }).then(data=>(data.json()).then(t=> {
+                  
+
+                this.setState({id:t._id, nombre: t.nombre, tipo:t.tipo}) }))
     }
     constructor(props){
         super(props);
-        console.log("voy2");
 
         this.state={
             id:this.props.value.id,

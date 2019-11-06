@@ -15,9 +15,9 @@ router.get('/', function(req, res) {
         });
     })
 });
-router.get("/:taller", (req, res) => {
+router.get("/:id", (req, res) => {
     conn.then(client => {
-        client.db("db").collection("taller").find({ _id: ObjectId(req.params.taller) }).toArray((err, data) => {
+        client.db("db").collection("servicios").find({ _id: ObjectId(req.params.id) }).toArray((err, data) => {
             res.send(data[0]);
         });
     });

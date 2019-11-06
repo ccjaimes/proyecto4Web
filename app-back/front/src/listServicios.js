@@ -6,7 +6,6 @@ class ListServicios extends Component {
 
     constructor(props){
         super(props);
-        console.log("voy1");
         this.state ={
             list : this.props.list
         }
@@ -14,11 +13,11 @@ class ListServicios extends Component {
 
     renderServicios(){
         var j=[]
-        for(var i=0; i<this.state.list.length;i++){
-            j.push({id:this.state.list[i]})
+        var u=this.props.list;
+        for(var i=0; i<u.length;i++){
+            j.push({id:u[i]})
         }
-        console.log(j);
-        console.log(this.state.list);
+        
         return j.map((e,i) => ( 
             <Servicio value={e} key={i}></Servicio>
         ));
