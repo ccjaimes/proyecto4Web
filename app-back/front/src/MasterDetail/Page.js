@@ -89,7 +89,7 @@ class Page extends Component {
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
-                    <Col xs={12} md={9} lg={9} className="col-8 App__Form">
+                    <Col xs={12} md={9} lg={9} className="col-8 App__Form" role="main">
                         <Switch>
                             <Route exact path='/page/' render={(props) => <User auth={this.props.auth} {...props} />}></Route>
                             <Route exact path="/grupos/:id" render={(props) => <GrupoDetailed auth={this.props.auth} {...props} /> } />

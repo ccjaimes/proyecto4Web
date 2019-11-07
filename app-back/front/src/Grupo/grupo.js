@@ -84,7 +84,7 @@ class Grupo extends Component {
                 retorno.push(
                     <div className="col-12 col-md-4">
                         <div className="card border-danger text-center my-2">
-                            <h3>Crea un grupo</h3>
+                            <h2>Crea un grupo</h2>
                             {this.DeployForm()}
                         </div>
                     </div>);
@@ -94,7 +94,7 @@ class Grupo extends Component {
                     <div className="col-12 col-md-4">
                         <Link to={"/grupos/" + e1._id}>
                             <div className="card text-center py-3">
-                                <h3>{e1.nombre}</h3>
+                                <h2>{e1.nombre}</h2>
                             </div>
                         </Link>
                     </div>);
@@ -105,7 +105,7 @@ class Grupo extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card border-danger text-center my-2">
-                                <h3>Crea un grupo</h3>
+                                <h2>Crea un grupo</h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -115,7 +115,7 @@ class Grupo extends Component {
                         <div className="col-12 col-md-4">
                             <Link to={"/grupos/" + e2._id}>
                                 <div className="card text-center py-3">
-                                    <h3>{e2.nombre}</h3>
+                                    <h2>{e2.nombre}</h2>
                                 </div>
                             </Link>
                         </div>);
@@ -126,7 +126,7 @@ class Grupo extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card border-danger text-center my-2">
-                                <h3>Crea un grupo</h3>
+                                <h2>Crea un grupo</h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -136,7 +136,7 @@ class Grupo extends Component {
                         <div className="col-12 col-md-4">
                             <Link to={"/grupos/" + e3._id}>
                                 <div className="card text-center py-3">
-                                    <h3>{e3.nombre}</h3>
+                                    <h2>{e3.nombre}</h2>
                                 </div>
                             </Link>
                         </div>);

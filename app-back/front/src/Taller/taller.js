@@ -86,7 +86,7 @@ class Taller extends Component {
                     retorno.push(
                         <div className="col-12 col-md-4">
                             <div className="card border-danger text-center my-2">
-                                <h3>Crea un Taller</h3>
+                                <h2>Crea un Taller</h2>
                                 {this.DeployForm()}
                             </div>
                         </div>);
@@ -97,7 +97,7 @@ class Taller extends Component {
                     <div className="col-12 col-md-4">
                         <Link style={{textDecoration:'none'}} to={"/talleres/" + e1._id}>
                             <div className="card text-center py-3 my-2">
-                                <h3>{e1.nombre}</h3>
+                                <h2>{e1.nombre}</h2>
                             </div>
                         </Link>
                     </div>);
@@ -110,7 +110,7 @@ class Taller extends Component {
                         retorno.push(
                             <div className="col-12 col-md-4">
                                 <div className="card border-danger text-center my-2">
-                                    <h3>Crea un Taller</h3>
+                                    <h2>Crea un Taller</h2>
                                     {this.DeployForm()}
                                 </div>
                             </div>);
@@ -121,7 +121,7 @@ class Taller extends Component {
                         <div className="col-12 col-md-4">
                             <Link style={{textDecoration:'none'}} to={"/talleres/" + e2._id}>
                                 <div className="card text-center py-3 my-2">
-                                    <h3>{e2.nombre}</h3>
+                                    <h2>{e2.nombre}</h2>
                                 </div>
                             </Link>
                         </div>);
@@ -134,7 +134,7 @@ class Taller extends Component {
                         retorno.push(
                             <div className="col-12 col-md-4">
                                 <div className="card border-danger text-center my-2">
-                                    <h3>Crea un Taller</h3>
+                                    <h2>Crea un Taller</h2>
                                     {this.DeployForm()}
                                 </div>
                             </div>);
@@ -145,7 +145,7 @@ class Taller extends Component {
                         <div className="col-12 col-md-4">
                             <Link style={{textDecoration:'none'}} to={"/talleres/" + e3._id}>
                                 <div className="card text-center py-3 my-2">
-                                    <h3>{e3.nombre}</h3>
+                                    <h2>{e3.nombre}</h2>
                                 </div>
                             </Link>
                         </div>);
