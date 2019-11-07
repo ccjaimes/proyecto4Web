@@ -14,5 +14,11 @@ router.get('/', function (req, res, next) {
         });
     });
 });
-
+router.post("/", (req, res) => {
+    conn.then(client => {
+        
+        client.db("db").collection("publicacion").insertOne(req.body);
+        res.send("La publicacion sido creada");
+    });
+});
 module.exports = router;

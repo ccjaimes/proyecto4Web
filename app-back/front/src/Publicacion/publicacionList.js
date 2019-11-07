@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PublicacionCard from './publicacionCard';
+
 class PublicacionList extends Component {
     
     state={
         list: []
+    
+        
     }
     
     componentDidMount(){
@@ -13,9 +16,9 @@ class PublicacionList extends Component {
             
         })});
     }
-   
     
-    
+
+  
     render() {
         
         return (
@@ -23,14 +26,8 @@ class PublicacionList extends Component {
                 <div className="container">
                     <h2>Publicaciones</h2>
                            {this.state.list.map((e,i)=>
-                              <PublicacionCard value={e} key={i}></PublicacionCard>
-                            )}
-<<<<<<< HEAD
-                    
-
-
-=======
->>>>>>> ecd54fc6ea6b662eb240effcc2aca28fd153f781
+                           
+                              <PublicacionCard value={e} key={i}></PublicacionCard> )}
             </div>
             </div>
         );

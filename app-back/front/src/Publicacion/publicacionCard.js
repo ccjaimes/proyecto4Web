@@ -1,9 +1,38 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
+
 
  class PublicacionCard extends React.Component {
   state={
     contenido: this.props.value.contenido,
+    fecha : this.props.value.fecha,
+    likes: 124,
+    updated: false
 }
+
+updateLikes = () => {
+
+  if(!this.state.updated) {
+    this.setState((prevState, props) => {
+      return {
+        likes: prevState.likes + 1,
+        updated: true
+        
+      };
+    });
+
+  } else {
+
+    this.setState((prevState, props) => {
+      return {
+        likes: prevState.likes - 1,
+        updated: false
+      };
+    });
+
+  }
+}
+
       render() {
         return (
 <div>
@@ -21,17 +50,29 @@ import React from 'react';
                   </div>
                 </div>
                 <div className="posttext pull-left">
-                <h6 className="date">Yesterday at 04:00 AM </h6>
-                <p>Hello, my ... {this.state.contenido}</p>
+                <h6 className="date">{this.state.fecha}</h6>
+                <h5>{this.state.contenido}</h5>
+                <Button className="btn btn-danger btn-lg btn-xs"
+
+                onClick={this.updateLikes}>Like
+               
+                    
+                  </Button>
+                <div>
+        
+      </div>
               </div>
-             
+            
               </div>
 
               <div className="clearfix">
               </div>
+        
+           
             </div>
             
-           
+
+
           </div>
           <div className='col-lg-4 col-md-4'>
             

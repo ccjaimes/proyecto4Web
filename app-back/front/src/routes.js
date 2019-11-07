@@ -8,6 +8,8 @@ import history from './history';
 import Reportar from './reportar';
 import User from './User/User';
 import Taller from './Taller/taller'
+import Publicacion from './Publicacion/publicacionList'
+
 import TallerDetailed from './Taller/tallerDetailed'
 
 
@@ -29,6 +31,7 @@ export const makeMainRoutes = () => {
           <Route path='/user'render={(props) => <User auth={auth} {...props} />} />
           <Route path='/reportar' render={(props) => <Reportar auth={auth} {...props} />} />
           <Route exact path = '/talleres' render ={(props)=><Taller auth={auth} {...props}/>}/> 
+          <Route exact path = '/publicaciones' render ={(props)=><Publicacion auth={auth} {...props}/>}/> 
           <Route exact path = '/talleres/:id' render ={(props)=><TallerDetailed auth={auth} {...props}/>}/>            
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
