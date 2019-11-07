@@ -6,7 +6,7 @@ import {Button} from 'react-bootstrap';
   state={
     contenido: this.props.value.contenido,
     fecha : this.props.value.fecha,
-    likes: 124,
+    likes: this.props.value.likes,
     updated: false
 }
 
@@ -52,12 +52,15 @@ updateLikes = () => {
                 <div className="posttext pull-left">
                 <h6 className="date">{this.state.fecha}</h6>
                 <h5>{this.state.contenido}</h5>
-                <Button className="btn btn-danger btn-lg btn-xs"
 
-                onClick={this.updateLikes}>Like
-               
-                    
-                  </Button>
+                <Button className="btn btn-danger btn-lg btn-xs" 
+                
+
+onClick={this.updateLikes}>Like {this.state.likes}
+
+    
+  </Button>
+                
                 <div>
         
       </div>
