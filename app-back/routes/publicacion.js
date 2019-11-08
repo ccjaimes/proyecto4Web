@@ -14,11 +14,15 @@ router.get('/', function (req, res, next) {
         });
     });
 });
-router.post("/", (req, res) => {
-    conn.then(client => {
-        
-        client.db("db").collection("publicacion").insertOne(req.body);
-        res.send("La publicacion sido creada");
+
+
+
+router.put("/", (req) => {
+    conn.then(client => { 
+        client.db("db").collection("publicacion").find({ contenido: req.params.contenido }).toArray((err, data) => {
+            client.db("db").collection("publicacion").updateOne({ contenido: req.params.contenido }, { $set: req.body });
+       
     });
+});
 });
 module.exports = router;

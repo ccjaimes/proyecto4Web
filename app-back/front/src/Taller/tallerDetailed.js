@@ -18,7 +18,11 @@ class TallerDetailed extends Component {
               }).then(data=>(data.json()).then(taller=> {this.setState({taller:taller, productosTaller: taller.productos, serviciosTaller:taller.servicios}) }))
     }
    
-    
+    componentDidMount(){
+        if(document.getElementById("navPage") === null){
+            document.getElementById("detTaller").setAttribute("role","main");
+        }
+    }
 
     constructor(props)
     {
@@ -32,7 +36,7 @@ class TallerDetailed extends Component {
     render() {
         
         return (
-            <div className="container mt-4" role="main">
+            <div className="container mt-4" id="detTaller">
                 <div className="row">
                     <div className="col">
                         <h2>Productos</h2>
@@ -40,7 +44,6 @@ class TallerDetailed extends Component {
                         return <Producto value={e} key={i}></Producto>
                     })}
                     </div>
-                    {console.log(this.state)}
 
                     <div className="col-6">
                     <div className="jumbotron jumbotron-fluid">

@@ -67,4 +67,15 @@ router.post('/:grupo/publicaciones/', (req, res, next) => {
     });
 });
 
+router.put("/:grupo/", (req,res) => {
+    conn.then(client => { 
+        console.log(req.params.grupo);
+        client.db("db").collection("grupo").find({ _id: ObjectId(req.params.grupo) }).toArray((err, data) => {
+      res.send(data[0]); 
+            // client.db("db").collection("grupo").updateOne( {_id: ObjectId(req.params.grupo) }, { $set: req.body });
+       
+    });
+});
+});
+
 module.exports = router;

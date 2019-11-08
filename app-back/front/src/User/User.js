@@ -74,7 +74,7 @@ class User extends Component {
               <div className="col-5">
                 <br></br>
                 <div className="circular--square" >
-                  <img src={this.state.picture} className="img-fluid" alt="Image perfil usuario." width="800" height="800" ></img>
+                  <img src={this.state.picture} className="img-fluid" alt="Imagen perfil usuario." width="800" height="800" ></img>
 
                 </div>
 

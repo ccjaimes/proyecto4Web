@@ -10,27 +10,45 @@ import {Button} from 'react-bootstrap';
     updated: false
 }
 
+
+
+
 updateLikes = () => {
 
   if(!this.state.updated) {
+
     this.setState((prevState, props) => {
       return {
         likes: prevState.likes + 1,
-        updated: true
-        
+        updated: true, 
       };
     });
-
-  } else {
-
-    this.setState((prevState, props) => {
-      return {
-        likes: prevState.likes - 1,
-        updated: false
-      };
-    });
-
+    let data ={
+      
+      "contenido": this.state.contenido,
+      "fecha": this.state.fecha,
+      "likes": this.state.likes + 1
+    };
+    console.log(data);
+    /*
+    fetch('/:grupo/', {
+      method: 'PUT', 
+      body: JSON.stringify(data), 
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response =>{ console.log('Success:', response);
+    
+  });
+*/
   }
+  this.setState((prevState, props) => {
+    return {
+      updated: false, 
+    };
+  });
 }
 
       render() {

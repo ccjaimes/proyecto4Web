@@ -37,7 +37,7 @@ class Page extends Component {
     }
     render() {
         return (
-            <div role="main">
+            <div id="navPage" role="main">
                 <Router>
                     <Row>
                         <Col xs={12} md={3} lg={3} className="App__Aside">
