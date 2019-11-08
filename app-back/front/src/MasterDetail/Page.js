@@ -52,40 +52,40 @@ class Page extends Component {
 
                             <Link to={{ pathname: '/user', aboutProps: { auth: this.props.auth } }} >
                                 <ListGroup.Item action className="List__Group"  >
-                                    <h5 style={{ color: '#D90429' }}>Perfil</h5>
+                                    <h5 style={{ color: '#8D99AE' }}>Perfil</h5>
                                 </ListGroup.Item>
                             </Link>
-                            <Link to="/grupos" style={{ color: '#D90429' }}>
+                            <Link to="/grupos" style={{ color: '#8D99AE' }}>
                                 <ListGroup.Item action className="List__Group"  >
-                                    <h5 style={{ color: '#D90429' }}>Grupos</h5>
+                                    <h5 style={{ color: '#8D99AE' }}>Grupos</h5>
                                 </ListGroup.Item>
                             </Link>
 
 
-                            <Link to="/reportar" style={{ color: '#D90429' }}>
+                            <Link to="/reportar" style={{ color: '#8D99AE' }}>
                                 <ListGroup.Item action className="List__Group"  >
-                                    <h5 style={{ color: '#D90429' }}>Reportar Robo</h5>
-                                </ListGroup.Item>
-
-                            </Link>
-
-                            <Link to="/robos" style={{ color: '#D90429' }}>
-
-                                <ListGroup.Item action className="List__Group"  >
-                                    <h5 style={{ color: '#D90429' }}>Mis reportes</h5>
+                                    <h5 style={{ color: '#8D99AE' }}>Reportar Robo</h5>
                                 </ListGroup.Item>
 
                             </Link>
-                            <Link to="/talleres" style={{ color: '#D90429' }}>
+
+                            <Link to="/robos" style={{ color: '#8D99AE' }}>
 
                                 <ListGroup.Item action className="List__Group"  >
-                                    <h5 style={{ color: '#D90429' }}>Talleres</h5>
+                                    <h5 style={{ color: '#8D99AE' }}>Mis reportes</h5>
+                                </ListGroup.Item>
+
+                            </Link>
+                            <Link to="/talleres" style={{ color: '#8D99AE' }}>
+
+                                <ListGroup.Item action className="List__Group"  >
+                                    <h5 style={{ color: '#8D99AE' }}>Talleres</h5>
                                 </ListGroup.Item>
 
                             </Link>
 
                             <ListGroup.Item action className="List__Group" >
-                                <NavLink onClick={this.logout.bind(this)} style={{ color: '#D90429' }}><h5 style={{ color: '#D90429' }}>Cerrar Sesión</h5></NavLink>
+                                <NavLink onClick={this.logout.bind(this)} style={{ color: '#8D99AE' }}><h5 style={{ color: '#8D99AE' }}>Cerrar Sesión</h5></NavLink>
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>

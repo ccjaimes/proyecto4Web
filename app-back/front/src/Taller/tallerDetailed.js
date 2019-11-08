@@ -32,7 +32,7 @@ class TallerDetailed extends Component {
     render() {
         
         return (
-            <div className="container mt-4">
+            <div className="container mt-4" role="main">
                 <div className="row">
                     <div className="col">
                         <h2>Productos</h2>

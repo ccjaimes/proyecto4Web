@@ -35,7 +35,7 @@ class Home extends Component {
       <div>
         {
           !isAuthenticated() && (
-            <div role="main">
+            <div>
               <div style={{ paddingTop: "50px" }}>
 
                 <Navbar bg="dark" variant="dark" expand="lg" fixed="top">

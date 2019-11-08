@@ -17,7 +17,7 @@ class Inicio extends Component {
     }
     render() {
         return (
-            <div>
+            <div role="main">
                 <section style={sectionStyle} >
                     <Row>
                         <Col></Col>
@@ -34,7 +34,7 @@ class Inicio extends Component {
                             <Card>
                                 <Card.Body>
                                     <Card.Title>
-                                        Bienvenido a PineBicis
+                                        <h1>Bienvenido a PineBicis</h1>
                         </Card.Title>
                                     <Card.Text>
                                         En nuestro sitio tienes la oportunidad de conocer mas personas amantes de las bicicletas como tu.

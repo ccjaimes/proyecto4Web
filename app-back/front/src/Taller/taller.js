@@ -157,7 +157,7 @@ class Taller extends Component {
     }
     render() {
         return (
-            <div className="container-fluid text-center">
+            <div className="container-fluid text-center" role="main">
                 <h1 className="display-4">Talleres</h1>
                 {this.deployList().map((e) => {
                     return e;
