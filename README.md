@@ -21,5 +21,7 @@ Referencias-Licencias: se usó como fondo un SVG creado en el sitio web: https:/
 
 ### Anexos 
 
+La siguiente imagen muestra el análisis de aXe realizado a la página que muestra las publicaciones de un grupo específico. Como se puede observar, presenta cero issues. Se realiza esta aclaración porque este mismo resultado no se muestra en todos los computadores. 
+
 ![Imagen issues de publicaciones en grupo](https://github.com/ccjaimes/proyecto4Web/blob/master/Issues.png)
 
