@@ -105,13 +105,13 @@ class User extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><h3>Nickname:</h3></th>
-                      <td> <h3>  {this.state.nickname} </h3></td>
+                      <th scope="row"><h2>Nickname:</h2></th>
+                      <td> <h2>  {this.state.nickname} </h2></td>
 
                     </tr>
                     <tr>
-                      <th scope="row"> <h3>Correo:  </h3></th>
-                      <td> <h3> {this.state.name} </h3></td>
+                      <th scope="row"> <h2>Correo:  </h2></th>
+                      <td> <h2> {this.state.name} </h2></td>
 
                     </tr>
 
