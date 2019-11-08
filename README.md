@@ -1,6 +1,6 @@
-# proyecto4Web- Bicicletas PINE
+# proyecto4Web- Bicicletas BIKES
 
-Bicicletas PINE es una plataforma que pretende apoyar a los ciclistas de Bogotá, esta plataforma cuenta con informaición de servicios, talleres, y comunidades que facilitan el día a día d elos ciclistas.
+Bicicletas BIKES es una plataforma que pretende apoyar a los ciclistas de Bogotá, esta plataforma cuenta con informaición de servicios, talleres, y comunidades que facilitan el día a día d elos ciclistas.
 
 
 ## Para desplegar la aplicación:
@@ -12,7 +12,7 @@ Bicicletas PINE es una plataforma que pretende apoyar a los ciclistas de Bogotá
 - Ejecutar npm start
     
 ### Videos
-Link Funcionalidad:
+Link Funcionalidad: https://youtu.be/f43cVXBBGaQ
 
 
 ### Dominio: 
