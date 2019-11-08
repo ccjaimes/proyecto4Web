@@ -18,3 +18,8 @@ Link Funcionalidad: https://youtu.be/f43cVXBBGaQ
 ### Dominio: 
 
 Referencias-Licencias: se usó como fondo un SVG creado en el sitio web: https://www.svgbackgrounds.com/.
+
+### Anexos 
+
+![Imagen issues de publicaciones en grupo](https://github.com/ccjaimes/proyecto4Web/blob/master/Issues.png)
+
