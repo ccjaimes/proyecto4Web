@@ -6,6 +6,7 @@ import Inicio from './inicio';
 import Grupo from './Grupo/grupo';
 import './home.css';
 import TallerDetailed from './Taller/tallerDetailed';
+import NotFound from './notFound';
 
 class Home extends Component {
 
@@ -66,6 +67,7 @@ class Home extends Component {
                 <Route path="/talleres/:taller">
                   <TallerDetailed></TallerDetailed>
                 </Route>
+                <Route component={NotFound}></Route>
               </Switch>
             </div>
 
