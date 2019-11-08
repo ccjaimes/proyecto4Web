@@ -14,12 +14,21 @@ class Taller extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     UNSAFE_componentWillMount() {
+        
         fetch("/back/talleres/").then(res => res.json()).then(lista => {
             this.setState({
                 talleres: lista
             });
         });
     }
+    componentDidMount(){
+        
+        if(document.getElementById("navPage") === null)
+        {
+            document.getElementById("pagTaller").setAttribute("role", "main");
+        }
+    }
+
     handleShow=()=>{
         console.log(this.state.show)
         this.setState({
@@ -157,7 +166,7 @@ class Taller extends Component {
     }
     render() {
         return (
-            <div className="container-fluid text-center" role="main">
+            <div className="container-fluid text-center" id="pagTaller">
                 <h1 className="display-4">Talleres</h1>
                 {this.deployList().map((e) => {
                     return e;
