@@ -30,6 +30,7 @@ class ListRobos extends Component {
     render() {
         return (
             <div>
+                <h1>Tus reportes de robos</h1>
                 <CardDeck>
                     {this.renderRobos()}
                 </CardDeck>

@@ -74,12 +74,12 @@ class Reportar extends Component {
     render() {
         return (
             <Row className="justify-content-md-center">
-               <Card text="white" className="text-center" style={{ width: '18rem'}}>
-                   <Card.Body style={{backgroundColor: '#8D99AE'}}>
+               <Card className="text-center" >
+                   <Card.Body style={{backgroundColor: '#EDF2F4'}}>
                       <Card.Title>
-                           Reportar un Robo
+                           <h1>Reportar un Robo</h1>
                     </Card.Title>
-                    <Button variant="outline-danger" onClick={() => this.handleShow()} size="lg" block>Reportar</Button>
+                    <Button className="btn btn-danger btn-lg" onClick={() => this.handleShow()} size="lg" block>Reportar</Button>
                     </Card.Body>
                 </Card>
                     

@@ -102,7 +102,6 @@ class Page extends Component {
                                 </Route>
                                 <Route path="/robos" render={(props) => <ListRobos auth={this.props.auth} {...props} />} />
 
-
                             </Switch>
                         </Col>
 
